@@ -26,10 +26,14 @@ skinparam backgroundColor $BGCOLOR
 
 !$FGCOLOR = $DARK
 !$PRIMARY_LIGHT = "#1c75cc"
-!$PRIMARY_DARK = "#103a82"
+!$PRIMARY_DARK = "#202138"
 !$PRIMARY_TEXT = $WHITE
 !$SECONDARY_LIGHT = "#f5f5f5"
 !$SECONDARY_DARK = "#c2c2c2"
+!$PRIMARY_STICKY = "#d6e7a9"
+!$SECONDARY_STICKY = "#b5b67c"
+!$PRIMARY_NOTE = "#c03556"
+!$SECONDARY_NOTE = "#b5b67c"
 !$SECONDARY_TEXT = $DARK
 !$INFO_LIGHT = "#3786be"
 !$INFO_DARK = "#04538b"
@@ -81,8 +85,17 @@ skinparam shadowing              true
 skinparam roundcorner            20
 skinparam ParticipantPadding     30
 skinparam BoxPadding             40
-skinparam Padding                12
+skinparam Padding                14
 skinparam ArrowColor             $PRIMARY_DARK
+skinparam nodesep                62
+skinparam ranksep                42
+skinparam maxMessageSize         224
+skinparam wrapWidth              480
+skinparam defaultTextAlignment   left
+skinparam linetype               ortho
+
+hide stereotypes
+
 skinparam stereotype {
     CBackgroundColor $SECONDARY_LIGHT
     CBorderColor $SECONDARY_DARK
@@ -96,14 +109,13 @@ skinparam stereotype {
     NBorderColor $INFO_DARK
 }
 skinparam title {
-	FontColor	                 $PRIMARY
+	FontColor	                 $PRIMARY_DARK
 	BorderColor	               $SECONDARY_DARK
 	FontSize	    	           12
-	BorderRoundCorner          20
+	BorderRoundCorner          2
 	BorderThickness 	         0
 	BackgroundColor            $SECONDARY_LIGHT-$SECONDARY
 }
-
 
 skinparam legend {
 	BackgroundColor $SECONDARY
@@ -111,33 +123,7 @@ skinparam legend {
 	FontColor $DARK
 }
 
-!startsub swimlane
-skinparam swimlane {
-	BorderColor $INFO
-	BorderThickness 2
-	TitleBackgroundColor  $SECONDARY_LIGHT-$SECONDARY
-	TitleFontColor $PRIMARY
-}
-!endsub
-
-!startsub activity
-
-skinparam activity {
-	FontColor $PRIMARY_TEXT
-	BorderColor $PRIMARY
-	BackgroundColor $PRIMARY_LIGHT-$PRIMARY
-	BarColor $SUCCESS
-	StartColor $INFO
-	EndColor $INFO
-	''
-	DiamondBackgroundColor $SECONDARY_LIGHT-$SECONDARY_DARK
-  	DiamondBorderColor $SECONDARY_DARK
-	DiamondFontColor $SECONDARY_TEXT
-}
-!endsub
-
 !startsub participant
-
 skinparam participant {
 	$primary_scheme()
 	ParticipantBorderThickness 2
@@ -145,100 +131,13 @@ skinparam participant {
 !endsub
 
 !startsub actor
-
 skinparam actor {
 	$primary_scheme()
 	FontColor $PRIMARY
 }
 !endsub
 
-!startsub arrow
-
-skinparam arrow {
-	FontName Impact
-	Thickness 1.5
-	FontSize 10
-	Color $DARK
-	FontColor $FGCOLOR
-}
-!endsub
-
-!startsub sequence
-
-skinparam sequence {
-	BorderColor $PRIMARY
-	' For some reason sequence title font color does not pick up from global
-	TitleFontColor $PRIMARY
-	BackgroundColor $BGCOLOR
-	StartColor $PRIMARY
-	EndColor $PRIMARY
-	''
-	BoxBackgroundColor $LIGHT
-	BoxBorderColor $GRAY
-	BoxFontColor $DARK
-	''
-	LifeLineBorderColor $SECONDARY_DARK
-	LifeLineBorderThickness 2
-	LifeLineBackgroundColor $SECONDARY_LIGHT
-	''
-	GroupBorderColor $GRAY
-	GroupFontColor $DARK
-	GroupHeaderFontColor $INFO
-	''
-	DividerBackgroundColor $WHITE-$LIGHT
-    DividerBorderColor $GRAY
-    DividerBorderThickness 2
-    DividerFontColor $DARK
-	''
-	ReferenceBackgroundColor $BGCOLOR
-	ReferenceBorderColor $GRAY
-	ReferenceFontColor $DARK
-	ReferenceHeaderFontColor $INFO
-}
-!endsub
-
-!startsub partition
-
-skinparam partition {
-	BorderColor $PRIMARY
-	FontColor $PRIMARY
-	BackgroundColor $BGCOLOR
-}
-!endsub
-
-!startsub collections
-
-skinparam collections {
-	$primary_scheme()
-}
-!endsub
-
-!startsub control
-
-skinparam control {
-	$primary_scheme()
-	FontColor $PRIMARY
-}
-!endsub
-
-!startsub entity
-
-skinparam entity {
-	$primary_scheme()
-	FontColor $PRIMARY
-}
-!endsub
-
-!startsub boundary
-
-skinparam boundary {
-	$primary_scheme()
-	FontColor $PRIMARY
-}
-!endsub
-
 !startsub agent
-
 skinparam agent {
 	BackgroundColor #orange
 	BorderColor #999999
@@ -246,8 +145,24 @@ skinparam agent {
 }
 !endsub
 
-!startsub note
+!startsub arrow
+skinparam arrow {
+'	FontName Impact
+	Thickness 2.5
+	FontSize 18
+	Color $PRIMARY_DARK
+	FontColor $PRIMARY_DARK
+}
+!endsub
 
+!startsub boundary
+skinparam boundary {
+	$primary_scheme()
+	FontColor $PRIMARY
+}
+!endsub
+
+!startsub note
 skinparam note {
 	BorderThickness 1
 	BackgroundColor $INFO_LIGHT-$INFO
@@ -257,7 +172,6 @@ skinparam note {
 !endsub
 
 !startsub artifact
-
 skinparam artifact {
 	BackgroundColor $WHITE-$LIGHT
 	BorderColor $SECONDARY_DARK
@@ -266,14 +180,12 @@ skinparam artifact {
 !endsub
 
 !startsub component
-
 skinparam component {
 	$primary_scheme()
 }
 !endsub
 
 !startsub interface
-
 skinparam interface {
 	BackgroundColor  $DANGER_LIGHT
 	BorderColor  $DANGER
@@ -282,7 +194,6 @@ skinparam interface {
 !endsub
 
 !startsub storage
-
 skinparam storage {
 	BackgroundColor $WARNING_LIGHT-$WARNING
   	BorderColor $WARNING
@@ -291,7 +202,6 @@ skinparam storage {
 !endsub
 
 !startsub node
-
 skinparam node {
 	BackgroundColor $SECONDARY_LIGHT-$SECONDARY
 	BorderColor $SECONDARY_DARK
@@ -300,7 +210,6 @@ skinparam node {
 !endsub
 
 !startsub cloud
-
 skinparam cloud {
 	BackgroundColor #F2FCFE-#eeeeee
 	BorderColor #F2FCFE
@@ -309,7 +218,6 @@ skinparam cloud {
 !endsub
 
 !startsub database
-
 skinparam database {
 	$primary_scheme()
 	' FontColor $PRIMARY
@@ -343,7 +251,6 @@ skinparam object {
 !endsub
 
 !startsub usecase
-
 skinparam usecase {
 	$primary_scheme()
 	BorderThickness 2
@@ -352,7 +259,6 @@ skinparam usecase {
 !endsub
 
 !startsub rectangle
-
 skinparam rectangle {
 	$secondary_scheme()
 	BorderThickness 2
@@ -361,7 +267,6 @@ skinparam rectangle {
 !endsub
 
 !startsub package
-
 skinparam package {
 	FontColor $PRIMARY
 	BorderColor $PRIMARY_LIGHT
@@ -371,17 +276,15 @@ skinparam package {
 !endsub
 
 !startsub folder
-
 skinparam folder {
 	BackgroundColor $WHITE-$SECONDARY_LIGHT
-  	BorderColor $WARNING
+  BorderColor $WARNING
 	FontColor $WARNING
 	BorderThickness 2
 }
 !endsub
 
 !startsub frame
-
 skinparam frame {
 	BackgroundColor $WHITE-$SECONDARY_LIGHT
   	BorderColor $INFO
@@ -440,16 +343,16 @@ skinparam stack {
 
 !function $getContainer($label, $descr, $sprite)
 !if ($descr == "") && ($sprite == "")
-!return '\n<b>'+$label+'</b>\n'
+!return '\n'+$label+'\n'
 !endif
 !if ($descr == "") && ($sprite != "")
-!return '<$'+$sprite+'>\n<b>'+$label+'</b>\n//'
+!return '<$'+$sprite+'>\n'+$label+'\n//'
 !endif
 !if ($descr != "") && ($sprite == "")
-!return '\n<b>'+$label+'</b>\n//\n\n '+$descr
+!return '\n'+$label+'\n//\n\n '+$descr
 !endif
 !if ($descr != "") && ($sprite != "")
-!return '<$'+$sprite+'>\n<b>'+$label+'</b>\n//\n\n '+$descr
+!return '<$'+$sprite+'>\n'+$label+'\n//\n\n '+$descr
 !endif
 !endfunction
 
@@ -457,26 +360,12 @@ skinparam rectangle<<sticky>> {
     StereotypeFontColor       $PRIMARY_DARK
     FontColor                 $PRIMARY_DARK
     FontSize                  24
-    BackgroundColor           $PRIMARY_LIGHT - $SECONDARY_LIGHT
-    BorderColor               $PRIMARY_DARK
-    BorderRoundCorner         8
+    BackgroundColor           $PRIMARY_STICKY
+    BorderColor               $SECONDARY_STICKY
+    BorderRoundCorner         2
     BorderThickness           2
 }
 
 !unquoted procedure Sticky($alias, $label, $descr="", $sprite="")
 rectangle "$getContainer($label, $descr, $sprite)" <<sticky>> as $alias
 !endprocedure
-
-
-
-
-skinparam nodesep 62
-skinparam ranksep 42
-
-skinparam maxMessageSize 224
-skinparam wrapWidth 480
-
-skinparam defaultTextAlignment left
-skinparam linetype ortho
-
-hide stereotypes

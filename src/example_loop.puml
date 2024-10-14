@@ -3,15 +3,13 @@ title Causal Loop Diagram: Chickens, Eggs, and Roads
 
 !include ./templates/puml-theme-stickies.puml
 
-'System(eggs, "# Eggs", "")
-'System(chickens, "# Chickens", "")
-'System(roadCrossings, "# Road Crossings", "")
+Sticky(eggs, " # Eggs")
+Sticky(chickens, " # Chickens")
+Sticky(roadCrossings, " # Road \n Crossings")
 
-Sticky(eggs, "Eggs")
-
-'eggs -> chickens: " "
-'chickens -> roadCrossings: " "
-'roadCrossings -> chickens: "O"
-'chickens -> eggs: " "
+eggs -> chickens: " "
+chickens -> roadCrossings: " "
+roadCrossings -> chickens: "O"
+chickens -> eggs: " "
 
 @enduml
