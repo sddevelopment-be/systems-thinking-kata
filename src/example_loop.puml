@@ -1,35 +1,17 @@
 @startuml
 title Causal Loop Diagram: Chickens, Eggs, and Roads
 
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!include ./templates/puml-theme-stickies.puml
 
-skinparam nodesep 62
-skinparam ranksep 42
-skinparam dpi 164
-skinparam maxMessageSize 224
+'System(eggs, "# Eggs", "")
+'System(chickens, "# Chickens", "")
+'System(roadCrossings, "# Road Crossings", "")
 
-skinparam wrapWidth 480
+Sticky(eggs, "Eggs")
 
-skinparam Padding 4
-
-skinparam shadowing true
-skinparam Font monospaced
-skinparam defaultTextAlignment left
-
-skinparam linetype ortho
-
-hide stereotypes
-
-System(eggs, "# Eggs", "")
-System(chickens, "# Chickens", "")
-System(roadCrossings, "# Road Crossings", "")
-
-eggs -> chickens: " "
-chickens -> roadCrossings: " "
-roadCrossings -> chickens: "O"
-chickens -> eggs: " "
+'eggs -> chickens: " "
+'chickens -> roadCrossings: " "
+'roadCrossings -> chickens: "O"
+'chickens -> eggs: " "
 
 @enduml
