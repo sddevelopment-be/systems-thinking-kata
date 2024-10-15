@@ -3,6 +3,9 @@ title Causal Loop Diagram: Chickens, Eggs, and Roads
 
 !include ./templates/puml-theme-stickies.puml
 
+skinparam backgroundColor white
+skinparam linetype        ortho
+
 Sticky(eggs, " # Eggs")
 Sticky(chickens, " # Chickens")
 Sticky(roadCrossings, " # Road \n Crossings")

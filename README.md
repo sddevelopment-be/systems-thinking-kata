@@ -11,7 +11,7 @@ the business goal of Customer Satisfaction Rate (i.e. delivering as much value t
 > **First Law of Diagramming:**
 > The primary value in diagrams is in the discussion while diagramming—we model to have a conversation.
 
-![./docs/example_loop.svg](./docs/example_loop.svg)
+![./docs/example_loop.svg](./docs/example_loop.png)
 
 ## The Kata
 
@@ -25,6 +25,28 @@ the business goal of Customer Satisfaction Rate (i.e. delivering as much value t
 
 ### Session Overview
 
+#### **Step 1:** Identify the Base Elements
+
+> **core premise:**  
+> _"We should have customer focus -- deliver as much value to our customers as possible."_
+
+* **Customer Satisfaction Rate:** The business goal of the organization.
+* **Alignment between product and customer needs:** The degree to which the product meets the needs of the customer.
+* **Length of the feedback loop:** The time it takes to get feedback from the customer.
+
+The diagram below shows the relationship between these elements.
+
+![./docs/value_delivery-PART_1.png](./docs/value_delivery-PART_1.png)
+
+You can find the editable version of this diagram in the `src` folder: [`src/kata/base-system.puml`](./src/kata/base-system.puml).
+
+#### **Step 2:** Add Organizational Elements
+
+#### **Step 3:** Add Timeliness Elements
+
+#### **Step 4:** Add Risk Mitigation Elements
+
+#### **Round-Up:** Conclusions and Learnings 
 
 ## References
 

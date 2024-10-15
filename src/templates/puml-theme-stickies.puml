@@ -12,6 +12,9 @@
 
 skinparam backgroundColor $BGCOLOR
 
+!$STICKY_FONT_SIZE = 20
+!$TECHN_FONT_SIZE = 10
+
 !$WHITE = "#fff"
 !$GRAY_DARK = "#5a5a5a"
 !$GRAY = "#959595"
@@ -90,9 +93,9 @@ skinparam ArrowColor             $PRIMARY_DARK
 skinparam nodesep                62
 skinparam ranksep                42
 skinparam maxMessageSize         224
-skinparam wrapWidth              480
-skinparam defaultTextAlignment   left
-skinparam linetype               ortho
+skinparam wrapWidth              224
+skinparam defaultTextAlignment   center
+skinparam linetype               polyline
 
 hide stereotypes
 
@@ -346,20 +349,17 @@ skinparam stack {
 !return '\n'+$label+'\n'
 !endif
 !if ($descr == "") && ($sprite != "")
-!return '<$'+$sprite+'>\n'+$label+'\n//'
+!return '<$'+$sprite+'>\n'+$label+'\n'
 !endif
 !if ($descr != "") && ($sprite == "")
-!return '\n'+$label+'\n//\n\n '+$descr
-!endif
-!if ($descr != "") && ($sprite != "")
-!return '<$'+$sprite+'>\n'+$label+'\n//\n\n '+$descr
+!return '\n'+$label+'\n\n---\n' + '<size:'+$TECHN_FONT_SIZE+'>' + $descr + '</size>'
 !endif
 !endfunction
 
 skinparam rectangle<<sticky>> {
     StereotypeFontColor       $PRIMARY_DARK
     FontColor                 $PRIMARY_DARK
-    FontSize                  24
+    FontSize                  $STICKY_FONT_SIZE
     BackgroundColor           $PRIMARY_STICKY
     BorderColor               $SECONDARY_STICKY
     BorderRoundCorner         2

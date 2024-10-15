@@ -1,0 +1,16 @@
+@startuml
+title Causal Loop Diagram: Value Delivery System
+
+!include ../templates/puml-theme-stickies.puml
+
+skinparam backgroundColor white
+
+
+Sticky(customer_satisfaction, "Customer Satisfaction Rate", "The business goal of the organization.")
+Sticky(alignment_to_market, "Alignment between product and customer needs", "The degree to which the product meets the needs of the customer.")
+Sticky(loop_length, "Length of the feedback loop", "The time it takes to get feedback from the customer.")
+
+alignment_to_market -left-> customer_satisfaction: " "
+loop_length -up-> alignment_to_market: "O"
+
+@enduml
