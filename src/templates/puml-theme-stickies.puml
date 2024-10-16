@@ -296,24 +296,22 @@ skinparam frame {
 }
 !endsub
 
-!startsub state
-
-skinparam state {
-	$primary_scheme()
-	BorderColor $PRIMARY_DARK
-	StartColor $INFO
-	EndColor $INFO
-	AttributeFontColor $LIGHT
-	AttributeFontSize 11
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
 }
-!endsub
 
-!startsub queue
+!unquoted function Boundary($alias, $label)
+!return 'rectangle "== '+$label+'" <<boundary>> as '+$alias
+!endfunction
+!unquoted function Boundary($alias, $label, $type)
+!return 'rectangle "=='+$label+'\n<size:'+$TECHN_FONT_SIZE+'>['+$type+']</size>" <<boundary>> as '+$alias
+!endfunction
 
-skinparam queue {
-	$primary_scheme()
-}
-!endsub
+
 
 !startsub card
 
