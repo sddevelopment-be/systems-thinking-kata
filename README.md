@@ -24,7 +24,6 @@ and a bunch of diagrams for you to toy with.
 
 <!-- TOC -->
 
-
 ---
 
 ## Goal
@@ -101,9 +100,23 @@ Add the organizational elements to the diagram and identify the relationships be
 Focus on the primary relationships between the elements, and aim to map out the key interactions between the existing and new elements.
 There are no right or wrong answers, but the goal is to have a conversation about how the organizational elements impact the base system.
 
+The elements, and their definitions, are:
+
+* **Ability to rapidly change what we're working on**: "The organization's ability to quickly change direction, also known as 'adaptability' or
+  'business agility'."
+* **Commited scope, agreement on batch size**: "The organization's promise on what they will be delivering, and how large the increments will be."
+* **Organizational Complexity**: "The amount of different divisions within the company, the existence of prescriptive processes, and the
+  decision-making mechanism that are in place."
+* **# of Handovers**: "The number of times a piece of work is handed over from one team to another."
+* **Lead Time**: "The time it takes to deliver a piece of work from start (concept) to finish (delivered value in hands of end-users.")
+
 ![Elements to be added](./docs/organizational_elements_CONNECT-US.png)
 
 ##### Possible Solution
+
+
+![Connected the organizational elements](./docs/organizational_elements_CONNECTED.svg)
+
 
 #### **Step 3:** Add Timeliness Elements
 
