@@ -8,22 +8,19 @@ and a bunch of diagrams for you to toy with.
 **Contents:**
 
 <!-- TOC -->
-
 * [Goal](#goal)
 * [Methodology](#methodology)
+  * [Approach](#approach)
 * [The Kata](#the-kata)
-    * [Background](#background)
-    * [Approach](#approach)
-    * [Session Overview](#session-overview)
-        * [**Step 1:** Identify the Base Elements](#step-1-identify-the-base-elements)
-        * [**Step 2:** Add Organizational Elements](#step-2-add-organizational-elements)
-        * [**Step 3:** Add Timeliness Elements](#step-3-add-timeliness-elements)
-        * [**Step 4:** Add Risk Mitigation Elements](#step-4-add-risk-mitigation-elements)
-        * [**Round-Up:** Conclusions and Learnings](#round-up-conclusions-and-learnings-)
+  * [Background](#background)
+  * [System modeling exercise](#system-modeling-exercise)
+    * [**Step 1:** Identify the Base Elements](#step-1-identify-the-base-elements)
+    * [**Step 2:** Add Organizational Elements](#step-2-add-organizational-elements)
+    * [**Step 3:** Add Timeliness Elements](#step-3-add-timeliness-elements)
+    * [**Step 4:** Add Risk Mitigation Elements](#step-4-add-risk-mitigation-elements)
+  * [**Round-Up:** Conclusions and Learnings](#round-up-conclusions-and-learnings)
 * [References](#references)
-
 <!-- TOC -->
-
 
 ---
 
@@ -43,16 +40,47 @@ the business goal of Customer Satisfaction Rate (i.e. delivering as much value t
 
 ![./docs/example_loop.svg](./docs/example_loop.png)
 
-## The Kata
+### Approach
+
+The session will be structured as a series of increments, working from a simple (provided) base system to a more complex model that includes a
+plethora of elements. Ideally, the session can be conducted in a workshop setting, where participants can work in groups (up to 4 people) to
+collaboratively build the diagram. The session will be facilitated by a person who is familiar with the technique, and who can guide the
+participants through the process, providing context and explanations where necessary, and can be called upon to answer questions or make a judgement
+call to "unblock" a group/participant and keep the session moving forward.
+
+The session will progress in a series of steps, where we will add new elements to the diagram, and discuss how they interrelate with the existing
+elements. After each step, people will have the opportunity to discuss their findings, reasoning, and any insights they have gained.
+Afterwards, an "example solution" will be presented, based on the contents of various literature sources.
+This will be used to compare and contrast the different approaches, and to highlight the intricacies of creating a model of a complex adaptive system.
+
+In order for the sessions to be successful, participants are offered the opportunity to reset their diagram at any time, and to continue their
+work on top of the existing example solution. This will allow them to explore different paths, while still having a reference point to fall back
+to in case they get stuck or diverge too far from the provided example.
 
 > **Remember the Guiding Principle of Models:**  
 > All models are wrong, some happen to be useful.
 
+The existence of an "example solution" is not meant to be prescriptive, but rather to provide a reference point for participants to compare
+their own reasoning and findings against. As mentioned in the first law of diagramming, the primary value in diagrams is in the discussions we
+have while creating them. The example solution is meant to facilitate these discussions, and to provide a starting point for further exploration.
+**They are not meant to be the final word on the subject, but rather a stepping stone to further understanding.**
+
+
+## The Kata
+
+We will use the causal loop diagramming technique to investigate the impact of working in a "project" vs "product" mode on the business goal of
+delivering as much value to our customers as possible. To achieve this, we will follow the reasoning of existing literature, and use them to 
+construct a model that represents the relationships between the different elements.
+
+Participants will work in groups to discuss the relationships between the different elements, and will use the diagram to facilitate the
+discussion. Our main learning objectives are two-fold: 
+
+* We want to understand the complexity of choosing an approach
+* We want to learn how to use the causal loop diagramming technique to model complex systems.
+
 ### Background
 
-### Approach
-
-### Session Overview
+### System modeling exercise
 
 #### **Step 1:** Identify the Base Elements
 
@@ -101,15 +129,29 @@ Add the organizational elements to the diagram and identify the relationships be
 Focus on the primary relationships between the elements, and aim to map out the key interactions between the existing and new elements.
 There are no right or wrong answers, but the goal is to have a conversation about how the organizational elements impact the base system.
 
+The elements, and their definitions, are:
+
+* **Ability to rapidly change what we're working on**: "The organization's ability to quickly change direction, also known as 'adaptability' or
+  'business agility'."
+* **Commited scope, agreement on batch size**: "The organization's promise on what they will be delivering, and how large the increments will be."
+* **Organizational Complexity**: "The amount of different divisions within the company, the existence of prescriptive processes, and the
+  decision-making mechanism that are in place."
+* **# of Handovers**: "The number of times a piece of work is handed over from one team to another."
+* **Lead Time**: "The time it takes to deliver a piece of work from start (concept) to finish (delivered value in hands of end-users.")
+
 ![Elements to be added](./docs/organizational_elements_CONNECT-US.png)
 
 ##### Possible Solution
+
+
+![Connected the organizational elements](./docs/organizational_elements_CONNECTED.png)
+
 
 #### **Step 3:** Add Timeliness Elements
 
 #### **Step 4:** Add Risk Mitigation Elements
 
-#### **Round-Up:** Conclusions and Learnings
+### **Round-Up:** Conclusions and Learnings
 
 ## References
 
