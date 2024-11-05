@@ -8,6 +8,20 @@
     {{ partial "section1.html" . }}
 {{ end }}
 
+{{ if .Site.Params.mainContent }}
+<section class="section is-medium" id="section2">
+    <div class="container">
+
+
+        <div class="content pattern">
+            {{ $file := .Site.Params.mainContent | readFile }}
+            {{ $file | markdownify }}
+        </div>
+    </div>
+</section>
+
+{{ end }}
+
 {{ if .Site.Params.section2 }}
     {{ partial "section2.html" . }}
 {{ end }}

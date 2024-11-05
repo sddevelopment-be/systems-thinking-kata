@@ -83,6 +83,7 @@ params:
         url: /changelog/
       - title: License
         url: /license/
+  mainContent: /README.md
   section3:
     title: Learn. Grow. Improve.
     subtitle: discover new ideas and techniques to help you excel
