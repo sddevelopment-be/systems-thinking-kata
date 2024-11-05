@@ -1,0 +1,42 @@
+{{ define "main" }}
+{{ partial "navbar.html" . }}
+{{ partial "navbar-clone.html" . }}
+{{ partial "title-section.html" . }}
+
+<section class="section section-feature-grey is-medium" id="glossary">
+
+    <div class="hero-body">
+        <div class="container">
+            <div class="wide columns is-vcentered">
+                <div class="column is-7 is-offset-1 landing-caption">
+                    {{ .Content }}
+                </div>
+                <div class="column is-3 is-offset-1">
+                    <figure class="image is-1by1">
+                        <img src="{{ printf "images/glossary_image.webp" | relURL }}" alt="Glossary hero image">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="content-wrapper">
+
+            <div class="terminology-wrapper">
+                {{ $fileToUse := "glossary" }}
+                {{ range $terminology := (sort (index .Site.Data $fileToUse).terminology "name" "asc" ) }}
+                    {{ partial "glossary_term.html" (dict "term" $terminology) }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{{ if .Site.Params.footer }}
+    {{ partial "footer.html" . }}
+{{ end }}
+
+{{ end }}

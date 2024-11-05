@@ -1,6 +1,25 @@
-### Java template
 # Compiled class file
 *.class
+target
+out
+node_modules
+
+.vscode
+**/.vscode/*
+.idea
+**/.idea/*
+.fleet
+**/.fleet/*
+
+gradle
+.gradle
+gradlew
+gradlew.*
+
+*.iml
+
+# Image source files
+*.xcf
 
 # Log file
 *.log
@@ -22,7 +41,15 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-replay_pid*
 
-.idea
+node_modules/**
+package-lock.json
+out/**
 
+# Custom ignores
+old_source
+public/
+resources/_gen/
+SPELLCHECK_OUTPUT.*
+
+**/*.http

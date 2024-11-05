@@ -1,0 +1,13 @@
+{{ $css := .css}}
+{{ $id := .id}}
+{{ $sass := .sass }}
+{{ $minifiedCss := false }}
+
+{{if $css}}
+    {{ $minifiedCss := $css | relURL}}
+{{end}}
+{{if $sass}}
+    {{ $minifiedCss := resources.Get $sass | toCSS | minify | fingerprint }}
+{{ end }}
+
+<link rel="stylesheet" type="text/css" href="{{ $css | relURL }}" {{if $id }} id="{{ $id }}"{{ end }}/>

@@ -1,0 +1,70 @@
+{{ $book := .book }}
+{{ $id := $book.id }}
+{{ $title := $book.title }}
+{{ $subtitle := $book.subtitle }}
+{{ $isbn := $book.isbn }}
+{{ $image := $book.image }}
+{{ $author := $book.authors}}
+{{ $publisher := $book.publisher}}
+{{ $loc := $book.location}}
+{{ $year := $book.year}}
+{{ $link := $book.link}}
+{{ $description := $book.description}}
+{{ $levels := $book.levels}}
+{{ $tags := $book.tags}}
+
+<div class="recommendation-item revealOnScroll delay-1" data-animation="fadeInLeft">
+    <div class="recommendation-title">
+        <a href="/books/{{$id}}" rel="noreferrer" target="_blank">
+        <h3 id={{ replace $title " " "-" | lower }}>{{ $title }}</h3>
+        </a>
+        {{ if $subtitle }}
+            <h4 class="subtitle">{{ $subtitle }}</h4>
+        {{ end }}
+    </div>
+    <div class="recommendation-content">
+        <div class="recommendation-image">
+            <a href="{{ $link }}" target="_blank" rel="nofollow,noreferrer">
+                {{if $image}}
+                    <img src="{{ .Site.BaseURL }}/images/books/{{$image}}" alt="cover image for '{{ $title }}'" />
+                {{else}}
+                    <img src="{{ .Site.BaseURL }}/images/books/book_placeholder.png"/>
+                {{end}}
+            </a>
+        </div>
+        <div class="recommendation-text">
+            <div class="reference text-item">
+                <b>bibliographical reference:</b> <br />
+                {{ $author }} ({{ $year}}) {{ $title }}. {{ if $publisher }} {{ if $loc }}{{ $loc }}:{{ end }} {{ $publisher }}. {{if $isbn }}isbn: {{$isbn}}. {{ end }} {{ end }}
+            </div>
+            {{if $description}}
+            <div class="recommendation-description text-item">
+                <b>description:</b>
+                <p>{{ $description | markdownify }}</p>
+            </div>
+            {{end}}
+            {{if $link}}
+            <div class="link text-item">
+                <b>link:</b>
+                <a href="{{ $link }}" target="_blank" rel="noreferrer">{{ $link }}</a>
+            </div>
+            {{end}}
+            {{ if $tags }}
+                <div class="recommendation-tags">
+                    <b>content categories:</b>
+                    {{ range $tag := $tags }}
+                        <span class="recommendation-tag"><a href='{{ "/tags/" | relLangURL}}{{ $tag | urlize}}'>{{$tag}}</a></span>
+                    {{end}}
+                </div>
+            {{ end }}
+            {{ if $levels }}
+                <div class="recommendation-tags">
+                    <b>complexity categories:</b>
+                    {{ range $level := $levels }}
+                        <span class="recommendation-tag">{{$level}}</span>
+                    {{end}}
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</div>

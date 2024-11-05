@@ -1,0 +1,35 @@
+{{ define "main" }}
+{{ partial "navbar.html" . }}
+{{ partial "navbar-clone.html" . }}
+
+
+{{ partial "title-section.html" . }}
+
+{{ $further_exploration := .Params.further_exploration }}
+
+<section class="section is-medium main">
+    <div class="container">
+        <div class="content pattern">
+            {{ .Content }}
+        </div>
+
+        {{ if $further_exploration }}
+        <details class="content pattern related">
+            <summary>References and Further Exploration</summary>
+            <div class="related-content">
+                <h2>Further Exploration</h2>
+                {{ partial "references.html" . }}
+            </div>
+        </details>
+        {{ end }}
+    </div>
+
+    {{ partial "sidebar.html" .}}
+</section>
+
+
+{{ if .Site.Params.footer }}
+    {{ partial "footer.html" . }}
+{{ end }}
+
+{{ end }}

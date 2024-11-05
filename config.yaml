@@ -1,0 +1,155 @@
+title: Systems Thinking Workshops
+baseURL: "localhost:1313"
+
+module:
+  imports:
+    path: github.com/StefMa/hugo-fresh
+
+assetDir: "assets"
+enableRobotsTXT: true
+
+paginate: 5
+canonifyURLs: true
+
+# Disables warnings
+markup:
+  defaultMarkdownHandler: goldmark
+  highlight:
+    codeFences: true
+    noClasses: true
+    lineNos: false
+    style: catppuccin-frappe
+    guessSyntax: true
+    tabWidth: 2
+  goldmark:
+    extensions:
+      footnote: true
+    renderer:
+      unsafe: true # Allows you to write raw html in your md files
+
+taxonomies:
+  category: "categories"
+  tag: "tags"
+  level: "levels"
+
+params:
+  dataDir: /data
+  # Open graph allows easy social sharing. If you don't want it you can set it to false or just delete the variable
+  openGraph: true
+  # Used as meta data; describe your site to make Google Bots happy
+  description: Designed to share valuable insights and best practices with kdnowledge workers. Covering a range of topics from cognitive biases to pattern-based knowledge sharing, it combines personal experiences with curated resources to help navigate the complexities of software development.
+  # Preloader ensures images are loaded before displaying to the user. If you don't want it uncomment to set it to false
+  # preloader: false
+  navbarlogo:
+  # Logo (from static/images/logos/___)
+    image: logos/ppp_spinoff.png
+    link: "/"
+    # Default width/height. Uncomment if you need to change
+    width: 112
+    height: 28
+  font:
+    name: "Open Sans"
+    sizes: [400,600]
+
+  # Customizable navbar. For a dropdown, add a "sublinks" list.
+  navbar:
+  - title: Home
+    url: /
+  - title: Diagramming
+    url: /diagram_tutorial/
+  - title: Kata
+    url: /project_vs_product/
+  - title: Terminology
+    url: /glossary/
+  - title: Admin
+    sublinks:
+      - title: Helping Out
+        url: /contributing/
+      - title: Change Log
+        url: /changelog/
+      - title: License
+        url: /license/
+  mainContent: /README.md
+  info:
+    title: Systems Thinking Kata
+    subtitle: using the "Project vs Product" kata to explore modeling complex domains
+    text: >
+      A systems thinking / modeling kata based on a talk given by [Edwin Burgers](https://www.linkedin.com/in/edwinburgers/) at the
+      [SoCraTes 2024](https://socratesbe.org) unconference. This repository contains a general overview of the approach, a description of the excercise,
+      and a bunch of diagrams for you to toy with. 
+      <br />
+      <br />
+      There are two main parts to this kata: an introductory tutorial on diagramming, and the main kata itself.    
+      The former will help you understand the notation of Causal Loop Diagrams`. 
+      The latter will guide you through the process of modeling a complex domain using the "Project vs Product" organizational conundrum.
+      <br />
+      <br />
+      Jump right in by clicking the "Diagramming" link in the navbar, or by following one of the links below.
+
+    links:
+      - text: Intro to diagramming
+        link: "/diagram_tutorial"
+      - text: Systems Thinking Kata
+        link: "/project_vs_product"
+      - text: GitHub
+        link: "https://github.com/stijn-dejongh/systems-thinking-kata"
+
+  footer:
+    # Logo (from /images/logos/___)
+    logo: logo_trans_border_scaled.webp
+    # Social Media Title
+    socialmediatitle: Socials
+    # Social media links (GitHub, Twitter, etc.). All are optional.
+    socialmedia:
+    - link: https://github.com/stijn-dejongh/systems-thinking-kata
+      # Icons are from Font Awesome
+      icon: github
+    - link: https://www.linkedin.com/company/sddevelopment-be
+      # Icons are from Font Awesome
+      icon: linkedin
+    bulmalogo: false
+
+mediaTypes:
+  text/enriched:
+    suffixes:
+      - enr
+  text/html:
+    suffixes:
+      - asp
+      - html
+      - htm
+  application/xml:
+    suffixes:
+     - xml
+  application/rss+xml:
+    suffixes:
+      - rss
+  application/json:
+    suffixes:
+      - json
+  application/yaml:
+    suffixes:
+      - yaml
+      - yml
+
+## Integrations and services
+services:
+  rss:
+    limit: 42
+
+author:
+  email: stijn@sddevelopment.be
+  name: Stijn Dejongh
+copyright: © 2024 SD Development, BV.
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+languages:
+  en:
+    contentDir: content
+    disabled: false
+    languageCode: en-US
+    languageDirection: ""
+    languageName: "English"
+    title: ""
+    weight: 0
