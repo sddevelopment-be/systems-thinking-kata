@@ -1,0 +1,9 @@
+{{ $text := .Get "text" }}
+{{ $author:= .Get "author" }}
+
+<div class="alert-container">
+    <blockquote class="groucho quote">
+        {{ $text | markdownify }}
+        {{ if $author }}<footer>{{ $author | markdownify }}</footer> {{ end }}
+    </blockquote>
+</div>

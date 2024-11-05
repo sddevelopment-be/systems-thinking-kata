@@ -1,0 +1,8 @@
+{{ $text := .Get "text" }}
+
+<div class="alert-container small-padding">
+    <blockquote class="groucho muted whatis">
+        <span class="muted-title">What is this?</span>
+        {{ $text | markdownify }}
+    </blockquote>
+</div>

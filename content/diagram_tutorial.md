@@ -1,18 +1,24 @@
 +++
 title = "Causal Loop Diagrams"
+subtitle = "Modeling complex systems with causal loop diagrams"
 aliases=["causal-loops", "diagramming_tutorial"]
-outputs = ['html', 'rss']
 author = "Stijn Dejongh"
 description = ""
 summary="""
 """
+further_exploration = [
+    {type="raw", author="Kim, H.D.", year="?", title="Guidelines for Drawing Causal Loop Diagram", link="https://www.cs.toronto.edu/~sme/SystemsThinking/GuidelinesforDrawingCausalLoopDiagrams.pdf", publisher="University of Toronto", site="cs.toronto.edu"},
+    {type="raw", author="Sterman, J.D.", year="2000", title="Business Dynamics: Systems Thinking and Modeling for a Complex World", link="https://www.goodreads.com/book/show/39736248-business-dynamics", publisher="McGraw-Hill Education",  isbn="978-0072389159"}
+]
 +++
 
-# Modeling complex systems with causal loop diagrams    
+## Introduction
 
-![/images/diagramming/example_loop.svg](/images/diagramming/example_loop.png)
+## Basic Concepts
 
-## References
+## Examples 
 
-* Kim, H.D. (?) [Guidelines for Drawing Causal Loop Diagram](https://www.cs.toronto.edu/~sme/SystemsThinking/GuidelinesforDrawingCausalLoopDiagrams.pdf). University of Toronto.
-* Sterman, J.D. ( 2000) [Business Dynamics: Systems Thinking and Modeling for a Complex World](https://www.goodreads.com/book/show/39736248-business-dynamics). McGraw-Hill Education. isbn: 978-0072389159
+### Chickens, Eggs, and Road Crossings
+
+{{< image src="/images/diagramming/example_loop.png"  
+    alt="Causal Loop Diagram for chickens cross the road" >}}

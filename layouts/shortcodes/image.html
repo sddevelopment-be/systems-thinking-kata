@@ -1,0 +1,52 @@
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" }}
+{{ $caption := .Get "caption" }}
+{{ $scale := .Get "size" }}
+{{ $align := .Get "float" }}
+{{ $style := .Get "style" }}
+
+{{ if not $align }}
+    {{ $align = "center" }}
+{{ end }}
+
+{{ if not $style }}
+    {{ $style = "text_image" }}
+{{ end }}
+
+
+{{ $imageFull := $src }}
+{{ $imageMedium := $src }}
+{{ $imageMobile := $src }}
+
+{{ if and (not (hasSuffix $src ".gif")) (not (hasSuffix $src ".svg")) (not (hasSuffix $src ".png")) }}
+    {{ $imageFull = printf "%s.webp" $src | relURL }}
+    {{ $imageMedium = printf "%s-medium.webp" $src | relURL }}
+    {{ $imageMobile = printf "%s-mobile.webp" $src | relURL }}
+{{ end }}
+
+{{ if $caption }}
+<div class="img-gallery {{ $align }}" {{ if $scale }}style="max-width: {{ $scale }}; "{{ end}}>
+    <figure>
+        <a class="search-icon" target="_blank" href="{{ $imageFull }}" title="{{ $alt }}">
+            <picture>
+                <source media="(max-width: 600px)" srcset="{{ $imageMedium}}" />
+                <source media="(max-width: 1024px)" srcset="{{ $imageMedium }}" />
+                <source media="(min-width: 1024px)" srcset="{{ $imageFull }}" />
+                <img src="{{ $imageFull }}" alt="{{ $alt }}" decoding="async" loading="lazy"/>
+            </picture>
+        </a>
+        <figcaption>{{ $caption }}</figcaption>
+    </figure>
+</div>
+{{ else }}
+<div class="{{ $style }} {{ $align }}" {{if $scale}}style="max-width: {{ $scale }}; "{{ end}}>
+    <a class="search-icon" target="_blank" href="{{ $imageFull }}" title="{{ $alt }}">
+        <picture>
+            <source media="(max-width: 600px)" srcset="{{ $imageMedium }}" />
+            <source media="(max-width: 1024px)" srcset="{{ $imageMedium }}" />
+            <source media="(min-width: 1024px)" srcset="{{ $imageFull }}" />
+            <img src="{{ $imageFull }}" alt="{{ $alt }}" decoding="async" loading="lazy"/>
+        </picture>
+    </a>
+</div>
+{{ end }}
