@@ -1,0 +1,83 @@
+[[terminology]]
+name = "Efficiency"
+abbreviation = ""
+domain = "Productivity"
+description = """
+Efficiency refers to the ability to achieve maximum output with minimum input. It involves optimizing the use of resources (such as time, energy, and materials)
+to accomplish tasks in the most effective and economical manner, thereby reducing waste and increasing overall productivity.
+"""
+aliases = ["Effectiveness", "Resource Optimization"]
+references = [
+    { title = "The Effective Executive by Peter Drucker", link = "https://www.amazon.com/Effective-Executive-Peter-F-Drucker/dp/0060833459" },
+    { title = "The 4-Hour Workweek by Timothy Ferriss", link = "https://www.amazon.com/4-Hour-Workweek-Escape-Live-Anywhere/dp/0307465357" },
+    { title = "The Principles of Scientific Management by Frederick Taylor", link = "https://www.gutenberg.org/ebooks/6435" },
+    { title = "Harvard Business Review - Articles on Productivity", link = "https://hbr.org/search?term=productivity+efficiency" }
+]
+
+[[terminology]]
+name = "Conway's Law"
+domain = "Software architecture"
+description = """
+Melvin Conway wrote: __'Any organization that designs a system (defined broadly) will produce a design whose structure
+is a copy of the organization's communication structure'__. The law originates from the observation that software is built by teams of people who are organized in a specific way. In order to build software effectively,
+these groups must work together to achieve their shared goal. Therefore, the software produced by these teams will invariably
+resemble the structure of the teams themselves.
+As an example, a company with two separate teams working for different departments (invoicing and sales) will likely produce software that
+is divided into two separate modules, one for invoicing and one for sales. These modules will probably interact with each other along pre-defined interfaces.
+Much like the teams interact with each other along pre-defined communication channels. If the teams are working in isolation, the software will likely be built in a similar way,
+with the two modules being designed in a way that allows them to be deployed and changed as independently as possible.
+    """
+aliases = []
+references = [
+    { title = "Conway's Law on wikipedia", link = "https://en.wikipedia.org/wiki/Conway%27s_law" },
+    { title = "Fowler on Conway's Law", link = "https://martinfowler.com/bliki/ConwaysLaw.html" }
+]
+
+[[terminology]]
+name = "Domain Driven Design"
+abbreviation = "DDD"
+domain = "software architecture"
+description = """
+Domain-Driven Design is a set of principles and schemes aimed at creating optimal systems of objects. Reduced to the
+creation of software abstractions, which are called models of subject areas. These models include business logic that
+establishes a link between the real conditions of the products' application area and the code.
+<br />
+<br />
+Domain-Driven Design is about creating shared understanding of the problem space. This shared understanding is reinforced ubiquitously via conversations,
+code and diagrams. DDD’s Shared understanding enhances synergy and alignment, increasing the ability to deliver value sustainably — ideally over the lifetime of a product.
+"""
+aliases = []
+references = []
+
+[[terminology]]
+name = "Continuous Improvement"
+abbreviation = ""
+domain = "quality management, process improvement"
+description = """
+Continuous improvement is an ongoing effort to enhance products, services, or processes by making small, incremental changes over time. It is a
+fundamental concept in quality management methodologies like Lean and Kaizen, aiming to boost efficiency and reduce waste.
+"""
+aliases = ["incremental improvement", "process optimization", "Kaizen"]
+references = [
+    { title = "Continuous Improvement Definition", link = "https://asq.org/quality-resources/continuous-improvement" }
+]
+
+[[terminology]]
+name = "Cognitive Load"
+abbreviation = ""
+domain = "cognitive science"
+description = """
+Cognitive load refers to the amount of mental effort required to process information or complete a task. It can be influenced by factors such as
+task complexity, the individual's working memory capacity, and the design of learning materials or environments.
+"""
+aliases = ["mental load", "cognitive effort"]
+references = [
+    { title = "Cognitive Load Theory", link = "https://www.instructionaldesign.org/theories/cognitive-load/" }
+]
+
+
+
+
+
+
+

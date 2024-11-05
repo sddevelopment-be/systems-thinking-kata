@@ -1,0 +1,168 @@
+title: Systems Thinking Workshops
+baseURL: "localhost:1313"
+
+module:
+  imports:
+    path: github.com/StefMa/hugo-fresh
+
+assetDir: "assets"
+enableRobotsTXT: true
+
+paginate: 5
+canonifyURLs: true
+
+# Disables warnings
+markup:
+  defaultMarkdownHandler: goldmark
+  highlight:
+    codeFences: true
+    noClasses: true
+    lineNos: false
+    style: catppuccin-frappe
+    guessSyntax: true
+    tabWidth: 2
+  goldmark:
+    extensions:
+      footnote: true
+    renderer:
+      unsafe: true # Allows you to write raw html in your md files
+
+taxonomies:
+  category: "categories"
+  tag: "tags"
+  level: "levels"
+
+params:
+  dataDir: /data
+  # Open graph allows easy social sharing. If you don't want it you can set it to false or just delete the variable
+  openGraph: true
+  # Used as meta data; describe your site to make Google Bots happy
+  description: Designed to share valuable insights and best practices with kdnowledge workers. Covering a range of topics from cognitive biases to pattern-based knowledge sharing, it combines personal experiences with curated resources to help navigate the complexities of software development.
+  # Preloader ensures images are loaded before displaying to the user. If you don't want it uncomment to set it to false
+  # preloader: false
+  navbarlogo:
+  # Logo (from static/images/logos/___)
+    image: logos/ppp_logo.png
+    link: "/"
+    # Default width/height. Uncomment if you need to change
+    # width: 112
+    # height: 28
+  font:
+    name: "Open Sans"
+    sizes: [400,600]
+  hero:
+    # Main hero title
+    title: Systems Thinking Workshops
+    # Hero subtitle (optional)
+    subtitle: Learn how to apply systems thinking in your daily work
+    # Button text
+    buttontext: Start Reading
+    # Where the main hero button links to
+    buttonlink: "#introduction"
+    # Hero image (from static/images/___)
+    image: pattern_portfolio.svg
+    # Footer logos (from static/images/logos/clients/*.svg)
+    # urls are optional
+    clientlogos:
+
+  # Customizable navbar. For a dropdown, add a "sublinks" list.
+  navbar:
+  - title: Home
+    url: /
+  - title: Diagramming
+    url: /diagram_tutorial/
+  - title: Kata
+    url: /project_vs_product/
+  - title: Terminology
+    url: /glossary/
+  - title: Admin
+    sublinks:
+      - title: Helping Out
+        url: /contributing/
+      - title: Change Log
+        url: /changelog/
+      - title: License
+        url: /license/
+  section3:
+    title: Learn. Grow. Improve.
+    subtitle: discover new ideas and techniques to help you excel
+    text: >
+      Imagine the thrill of discovering new ideas and techniques that will help you excel at the things you do every day.
+      Whether you're already working in a technical role or just starting out, there's always more to learn and explore.
+      Either way, we've got something for you.  
+      <br />  
+      
+      In this knowledge base, you'll discover practical insights and valuable tips from experts who have dedicated themselves to mastering their craft.
+      By reading on, you'll gain a deeper understanding of the topics that interest you and learn new ways to take steps towards achieving your goals and
+      becoming the best you can be.    
+      <br />
+      <br />
+      
+      So why not give it a try? Dive in and see how far you can go.
+    links:
+      - text: Concepts
+        link: "/concepts"
+#      - text: Pillars
+#        link: "/pillars"
+      - text: Practices
+        link: "/practices"
+
+  footer:
+    # Logo (from /images/logos/___)
+    logo: logo_trans_border_scaled.webp
+    # Social Media Title
+    socialmediatitle: Socials
+    # Social media links (GitHub, Twitter, etc.). All are optional.
+    socialmedia:
+    - link: https://github.com/sddevelopment-be/systems-thinking-kata
+      # Icons are from Font Awesome
+      icon: github
+    - link: https://www.linkedin.com/company/sddevelopment-be
+      # Icons are from Font Awesome
+      icon: linkedin
+    bulmalogo: false
+
+mediaTypes:
+  text/enriched:
+    suffixes:
+      - enr
+  text/html:
+    suffixes:
+      - asp
+      - html
+      - htm
+  application/xml:
+    suffixes:
+     - xml
+  application/rss+xml:
+    suffixes:
+      - rss
+  application/json:
+    suffixes:
+      - json
+  application/yaml:
+    suffixes:
+      - yaml
+      - yml
+
+## Integrations and services
+services:
+  rss:
+    limit: 42
+
+author:
+  email: stijn@sddevelopment.be
+  name: Stijn Dejongh
+copyright: © 2024 SD Development, BV.
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+languages:
+  en:
+    contentDir: content
+    disabled: false
+    languageCode: en-US
+    languageDirection: ""
+    languageName: "English"
+    title: ""
+    weight: 0

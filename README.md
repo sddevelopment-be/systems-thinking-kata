@@ -21,16 +21,21 @@ the business goal of Customer Satisfaction Rate (i.e. delivering as much value t
 
 ## Structure
 
-| Name                           feature/structure                                | Description                                                |
+| Name                           feature/structure               | Description                                                |
 |:---------------------------------------------------------------|:-----------------------------------------------------------|
 | [`README.md`](./README.md)                                     | This ReadMe file with general repository information       |
 | [`content/diagram_tutorial`](./content/diagram_tutorial)       | The content of the introduction to Causal Loop Diagramming |
 | [`content/projects_vs_product`](./content/projects_vs_product) | The main system thinking kata content                      |
-| [`LICENSE.md`](LICENSE.md)                                     | The license file for this repository                       |
-| [`CHANGELOG.md`](CHANGELOG.md)                                 | The changelog for this repository                          |
+| [`GLOSSARY.md`](./GLOSSARY.md)                                 | A list of terminology and their meaning                    |
+| [`LICENSE.md`](content/LICENSE.md)                             | The license file for this repository                       |
+| [`CHANGELOG.md`](content/CHANGELOG.md)                         | The changelog for this repository                          |
 
 # Contributing
 
-If you want to contribute to this repository, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) file for more information.
+If you want to contribute to this repository, please read the [CONTRIBUTING.md](content/CONTRIBUTING.md) file for more information.
 
+# License
 
+This repository is licensed under the [Creative Commons BY-NC 4.0](content/LICENSE.md). This basically means you can use, share, and adapt this work
+for non-commercial purposes, as long as you give credit to the original author. You can adapt this work, and use it in your own projects (even
+for commercial purposes), but you must properly attribute the authors of this work and include a link to this publication.

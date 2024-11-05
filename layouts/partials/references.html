@@ -1,0 +1,36 @@
+{{ $further_exploration := .Params.further_exploration }}
+
+{{ if $further_exploration }}
+<ul>
+    {{ $bibliographicReferences := (apply (where $further_exploration "type" "biblio") "index" "." "id") }}
+    {{ if $bibliographicReferences }}
+        {{ $allBooks := (sort (index .Site.Data "bibliography").book "authors" "asc" )}}
+        {{ $matchingBooks := (where $allBooks "id" "in" $bibliographicReferences ) }}
+        {{ range $book := $matchingBooks }}
+            <li>
+                {{ $book.authors }} ({{ $book.year}}) <a href="/books/{{$book.id}}" rel="noreferrer" target="_blank">{{ $book.title }}</a>. {{ if $book.publisher }} {{ if $book.location }}, {{ $book.location }}:{{ end }} {{ $book.publisher }}. {{if $book.isbn }}isbn: {{$book.isbn}}. {{ end }} {{ end }}
+            </li>
+        {{ end }}
+    {{ end }}
+
+    {{ $rawReferences := where $further_exploration "type" "raw" }}
+    {{ if $rawReferences }}
+        {{ range $rawReference := (sort $rawReferences "author" "asc" ) }}
+            <li>
+                {{ $rawReference.author }} ({{ $rawReference.year}}). <a href="{{ $rawReference.link }}" target="_blank" rel="noreferrer">{{ $rawReference.title }}</a>. {{$rawReference.site}}.  <br />{{$rawReference.link}}.
+            </li>
+        {{ end }}
+    {{ end }}
+
+    {{ $toolReferences := (apply (where $further_exploration "type" "tool") "index" "." "id") }}
+    {{ if $toolReferences }}
+        {{ $allTools := (index .Site.Data "tools").tool }}
+        {{ $matchingTools := (sort (where $allTools "id" "in" $toolReferences ) "authors" "asc" ) }}
+        {{ range $toolReference := $matchingTools }}
+            <li>
+                {{ $toolReference.authors }} ({{ $toolReference.year}}) <a href="{{ $toolReference.link }}" target="_blank" rel="noreferrer"> {{ $toolReference.name }}</a>. {{$toolReference.site}}.
+            </li>
+        {{ end }}
+    {{ end }}
+</ul>
+{{ end }}

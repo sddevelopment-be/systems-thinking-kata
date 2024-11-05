@@ -1,0 +1,40 @@
+{{- $inServerMode := .Site.IsServer }}
+{{- $sass         := "style.sass" }}
+{{- $cssTarget    := "css/style.css" }}
+{{- $cssOpts      := cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
+{{- $fontName     := .Site.Params.font.name | default "Open Sans" }}
+{{- $fontFace     := replace $fontName " " "+" }}
+{{- $fontSizes    := delimit (.Site.Params.font.sizes | default (slice 300 400 600 700)) "," }}
+{{- $fontUrl      := printf "/css/open-sans.css?family=%s:%s&display=swap" $fontFace $fontSizes }}
+<link rel="icon" type="image/png" href="{{ "images/favicon.ico" | relURL }}" />
+
+<link rel="stylesheet" type="text/css" href="{{ $fontUrl | relURL }}" />
+
+{{- if $inServerMode }}
+{{- $css := resources.Get $sass | toCSS $cssOpts }}
+<link rel="preload" href="{{ $css.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" type="text/css" href="{{ $css.RelPermalink }}"></noscript>
+{{- else }}
+{{- $css := resources.Get $sass | toCSS $cssOpts | minify | fingerprint }}
+<link rel="preload" href="{{ $css.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" type="text/css" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" /></noscript>
+{{- end }}
+
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link rel="preconnect" href="https://ka-f.fontawesome.com" />
+
+{{- $icons := "js/23575b1502.js" | relURL }}
+<script type="text/javascript" src="{{  $icons }}"></script>
+
+{{- $toc := "js/sdd_toc.js" | relURL }}
+<script type="text/javascript" src="{{ $toc }}"></script>
+
+{{ partial "stylesheet.html" (dict "css" "css/icons.css")  }}
+{{ partial "stylesheet.html" (dict "css" "css/custom.min.css")  }}
+{{ partial "stylesheet.html" (dict "css" "css/glossary.min.css")  }}
+{{ partial "stylesheet.html" (dict "css" "css/recommendations.min.css")  }}
+{{ partial "stylesheet.html" (dict "css" "css/images.min.css")  }}
+{{ partial "stylesheet.html" (dict "css" "css/patterns.min.css")  }}
+{{ partial "stylesheet.html" (dict "css" "css/toc.min.css")  }}
+{{ partial "stylesheet.html" (dict "css" "css/quotes.min.css")  }}
+{{ partial "stylesheet.html" (dict "css" "css/taxonomies.min.css")  }}
