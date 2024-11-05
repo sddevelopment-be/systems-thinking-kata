@@ -58,7 +58,7 @@ params:
     # Button text
     buttontext: Start Reading
     # Where the main hero button links to
-    buttonlink: "#introduction"
+    buttonlink: "#section3"
     # Hero image (from static/images/___)
     image: pattern_portfolio.svg
     # Footer logos (from static/images/logos/clients/*.svg)
