@@ -5,6 +5,7 @@ A systems thinking / modeling kata based on a talk given by [Edwin Burgers](http
 and a bunch of diagrams for you to toy with.
 
 ---
+<!-- INTRO STOP --->
 
 ## Goal
 
@@ -21,7 +22,7 @@ the business goal of Customer Satisfaction Rate (i.e. delivering as much value t
 
 ## Structure
 
-| Name                           feature/structure       | Description                                                |
+| Name                                                   | Description                                                |
 |:-------------------------------------------------------|:-----------------------------------------------------------|
 | [`content/diagram_tutorial`](./diagram_tutorial)       | The content of the introduction to Causal Loop Diagramming |
 | [`content/projects_vs_product`](./projects_vs_product) | The main system thinking kata content                      |

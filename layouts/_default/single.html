@@ -2,6 +2,7 @@
 {{ partial "navbar.html" . }}
 {{ partial "navbar-clone.html" . }}
 
+
 {{ partial "title-section.html" . }}
 
 {{ $further_exploration := .Params.further_exploration }}
@@ -12,21 +13,19 @@
             {{ .Content }}
         </div>
 
+        {{ if $further_exploration }}
         <details class="content pattern related">
-            <summary>References and Related Patterns</summary>
+            <summary>References and Further Exploration</summary>
             <div class="related-content">
-                {{ if $further_exploration }}
-                    <h2>Further Exploration</h2>
-                    {{ partial "references.html" . }}
-
-                {{ end }}
+                <h2>Further Exploration</h2>
+                {{ partial "references.html" . }}
             </div>
         </details>
+        {{ end }}
     </div>
 
     {{ partial "sidebar.html" .}}
 </section>
-
 
 
 {{ if .Site.Params.footer }}

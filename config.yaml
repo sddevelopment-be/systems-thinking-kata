@@ -42,28 +42,14 @@ params:
   # preloader: false
   navbarlogo:
   # Logo (from static/images/logos/___)
-    image: logos/ppp_logo.png
+    image: logos/ppp_spinoff.png
     link: "/"
     # Default width/height. Uncomment if you need to change
-    # width: 112
-    # height: 28
+    width: 112
+    height: 28
   font:
     name: "Open Sans"
     sizes: [400,600]
-  hero:
-    # Main hero title
-    title: Systems Thinking Workshops
-    # Hero subtitle (optional)
-    subtitle: Learn how to apply systems thinking in your daily work
-    # Button text
-    buttontext: Start Reading
-    # Where the main hero button links to
-    buttonlink: "#section3"
-    # Hero image (from static/images/___)
-    image: pattern_portfolio.svg
-    # Footer logos (from static/images/logos/clients/*.svg)
-    # urls are optional
-    clientlogos:
 
   # Customizable navbar. For a dropdown, add a "sublinks" list.
   navbar:
@@ -84,29 +70,29 @@ params:
       - title: License
         url: /license/
   mainContent: /README.md
-  section3:
-    title: Learn. Grow. Improve.
-    subtitle: discover new ideas and techniques to help you excel
+  info:
+    title: Systems Thinking Kata
+    subtitle: using the "Project vs Product" kata to explore modeling complex domains
     text: >
-      Imagine the thrill of discovering new ideas and techniques that will help you excel at the things you do every day.
-      Whether you're already working in a technical role or just starting out, there's always more to learn and explore.
-      Either way, we've got something for you.  
-      <br />  
-      
-      In this knowledge base, you'll discover practical insights and valuable tips from experts who have dedicated themselves to mastering their craft.
-      By reading on, you'll gain a deeper understanding of the topics that interest you and learn new ways to take steps towards achieving your goals and
-      becoming the best you can be.    
+      A systems thinking / modeling kata based on a talk given by [Edwin Burgers](https://www.linkedin.com/in/edwinburgers/) at the
+      [SoCraTes 2024](https://socratesbe.org) unconference. This repository contains a general overview of the approach, a description of the excercise,
+      and a bunch of diagrams for you to toy with. 
       <br />
       <br />
-      
-      So why not give it a try? Dive in and see how far you can go.
+      There are two main parts to this kata: an introductory tutorial on diagramming, and the main kata itself.    
+      The former will help you understand the notation of Causal Loop Diagrams`. 
+      The latter will guide you through the process of modeling a complex domain using the "Project vs Product" organizational conundrum.
+      <br />
+      <br />
+      Jump right in by clicking the "Diagramming" link in the navbar, or by following one of the links below.
+
     links:
-      - text: Concepts
-        link: "/concepts"
-#      - text: Pillars
-#        link: "/pillars"
-      - text: Practices
-        link: "/practices"
+      - text: Intro to diagramming
+        link: "/diagram_tutorial"
+      - text: Systems Thinking Kata
+        link: "/project_vs_product"
+      - text: GitHub
+        link: "https://github.com/stijn-dejongh/systems-thinking-kata"
 
   footer:
     # Logo (from /images/logos/___)
@@ -115,7 +101,7 @@ params:
     socialmediatitle: Socials
     # Social media links (GitHub, Twitter, etc.). All are optional.
     socialmedia:
-    - link: https://github.com/sddevelopment-be/systems-thinking-kata
+    - link: https://github.com/stijn-dejongh/systems-thinking-kata
       # Icons are from Font Awesome
       icon: github
     - link: https://www.linkedin.com/company/sddevelopment-be

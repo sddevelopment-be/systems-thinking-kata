@@ -1,0 +1,41 @@
+{{- $info   := .Site.Params.info }}
+{{- $title      := index $info "title" }}
+{{- $subtitle   := index $info "subtitle" }}
+{{- $text      := index $info "text" }}
+{{- $image      := index $info "image" }}
+{{- $links := index $info "links" }}
+
+<section>
+    <div class="title-wrapper-dark fitted">
+        <h1 class="title fitted is-1 is-bold is-spaced">
+            {{ $title }}
+            <div class="divider"></div>
+            {{ if $subtitle }}
+            <h2 class="subtitle fitted is-4 is-muted">
+                {{ $subtitle }}
+            </h2>
+            {{ end }}
+        </h1>
+    </div>
+</section>
+
+<section class="section section-feature-grey is-medium" id="info">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-10 is-offset-1">
+                <div class="content-hero">
+                    {{ $text | markdownify }}
+                </div>
+            </div>
+        </div>
+
+
+        <p class="has-text-centered mt-20 hero-links">
+            {{ range $link := $links }}
+            <a class="button cta is-large rounded secondary-btn raised hero-link" href="{{ $link.link }}">
+                {{ $link.text }}
+            </a>
+            {{ end }}
+        </p>
+    </div>
+</section>

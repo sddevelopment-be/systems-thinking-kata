@@ -1,44 +1,36 @@
 {{ define "main" }}
 
-{{ if .Site.Params.hero }}
-    {{ partial "hero.html" . }}
-{{ end }}
+{{ partial "navbar.html" . }}
+{{ partial "navbar-clone.html" . }}
 
-{{ if .Site.Params.section1 }}
-    {{ partial "section1.html" . }}
+
+{{ if .Site.Params.info }}
+    {{ partial "info.html" . }}
 {{ end }}
 
 {{ if .Site.Params.mainContent }}
-<section class="section is-medium" id="section2">
+<section class="section is-medium" id="info">
     <div class="container">
+        {{ $file := .Site.Params.mainContent | readFile }}
+        {{ $title :=  index (findRE "^# .*" $file) 0}}
+        {{ $title := replaceRE "^#" "" $title }}
+        {{ $subtitle := replaceRE ".*:" "" $title }}
+        {{ $title := replaceRE ":.*" "" $title }}
+        {{ $file := replaceRE "^# .*" "" $file }}
+        {{ $split := split $file "<!-- INTRO STOP --->" }}
+        {{ $file := index $split 1 }}
 
+        <div class="title-wrapper has-text-centered">
+            <h1 class="title section-title">{{ $title }}</h1>
+            <h2 class="subtitle section-title">{{ $subtitle }}</h2>
+        </div>
 
         <div class="content pattern">
-            {{ $file := .Site.Params.mainContent | readFile }}
             {{ $file | markdownify }}
         </div>
     </div>
 </section>
-
 {{ end }}
-
-{{ if .Site.Params.section2 }}
-    {{ partial "section2.html" . }}
-{{ end }}
-
-{{ if .Site.Params.section3 }}
-    {{ partial "section3.html" . }}
-{{ end }}
-
-{{ if .Site.Params.section4 }}
-{{ partial "section4.html" . }}
-{{ end }}
-
-{{ if .Site.Params.section5 }}
-{{ partial "section5.html" . }}
-{{ end }}
-
-
 
 {{ if .Site.Params.footer }}
 {{ partial "footer.html" . }}
