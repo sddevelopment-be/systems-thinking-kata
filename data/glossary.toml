@@ -75,6 +75,20 @@ references = [
     { title = "Cognitive Load Theory", link = "https://www.instructionaldesign.org/theories/cognitive-load/" }
 ]
 
+[[terminology]]
+name = "Systems Thinking"
+abbreviation = ""
+domain = "Learning"
+description = """
+Systems Thinking is an approach to understanding and solving complex problems by viewing them as parts of an interconnected whole rather than in isolation. It involves recognizing patterns, relationships, and feedback loops within systems to better anticipate the impact of decisions and actions, thereby enabling more holistic and effective solutions.
+"""
+aliases = ["Holistic Thinking", "Systems Approach"]
+references = [
+    { title = "The Fifth Discipline: The Art & Practice of The Learning Organization by Peter Senge", link = "https://www.amazon.com/Fifth-Discipline-Practice-Learning-Organization/dp/0385517254" },
+    { title = "Thinking in Systems: A Primer by Donella H. Meadows", link = "https://www.amazon.com/Thinking-Systems-Donella-H-Meadows/dp/1603580557" },
+    { title = "Systems Thinking For Social Change: A Practical Guide to Solving Complex Problems, Avoiding Unintended Consequences, and Achieving Lasting Results by David Peter Stroh", link = "https://www.amazon.com/Systems-Thinking-Social-Change-Consequences/dp/160358580X" }
+]
+
 
 
 
