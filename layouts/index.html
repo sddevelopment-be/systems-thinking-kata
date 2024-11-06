@@ -8,6 +8,8 @@
     {{ partial "info.html" . }}
 {{ end }}
 
+{{ partial "comments.html" . }}
+
 {{ if .Site.Params.mainContent }}
 <section class="section is-medium" id="info">
     <div class="container">
@@ -31,6 +33,7 @@
     </div>
 </section>
 {{ end }}
+
 
 {{ if .Site.Params.footer }}
 {{ partial "footer.html" . }}
