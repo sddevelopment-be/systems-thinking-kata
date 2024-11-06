@@ -43,16 +43,14 @@ In order for the sessions to be successful, participants are offered the opportu
 work on top of the existing example solution. This will allow them to explore different paths, while still having a reference point to fall back
 to in case they get stuck or diverge too far from the provided example.
 
-> **Remember the Guiding Principle of Models:**  
-> All models are wrong, some happen to be useful.
+{{< tip text=`
+**Remember the Guiding Principle of Models:**  
+All models are wrong, some happen to be useful.` >}}
 
 The existence of an "example solution" is not meant to be prescriptive, but rather to provide a reference point for participants to compare
 their own reasoning and findings against. As mentioned in the first law of diagramming, the primary value in diagrams is in the discussions we
 have while creating them. The example solution is meant to facilitate these discussions, and to provide a starting point for further exploration.
 **They are not meant to be the final word on the subject, but rather a stepping stone to further understanding.**
-
-
-## Learning Objectives
 
 ## Background
 
@@ -60,8 +58,7 @@ have while creating them. The example solution is meant to facilitate these disc
 
 ### **Step 1:** Identify the Base Elements
 
-> **core premise:**  
-> _"We should have customer focus -- deliver as much value to our customers as possible."_
+{{< info text=`We should have customer focus -- deliver as much value to our customers as possible.` >}}
 
 The base elements are the core elements that are essential to the business goal of the organization. In this case, the core premise is that the
 organization should have a customer focus and deliver as much value to their customers as possible. As such, we will identify the following key
@@ -73,21 +70,23 @@ elements that make up the base system:
 
 The diagram below shows the relationship between these elements.
 
-![Core elements](/images/kata/value_delivery-PART_1.png)
+{{< image src="/images/kata/value_delivery-PART_1.png" alt="Core elements" size="50%" >}}
 
 You can find the editable version of this diagram in the `src` folder: [`src/kata/base-system.puml`](src/images/base-system.puml).
 
 ### **Step 2:** Add Organizational Elements
 
-> **core premise:**  
-> _"That's a lot of work, big impact... We need to organise that!"_
+{{< info text="That's a lot of work, big impact... We need to organise that!" >}}
 
 In this step, we will identify the organizational elements that impact the base system.
 These elements are the organizational structures, processes, and practices that influence the delivery causal system.
 Our goal is to indentify how these elements impact the existing system elements, i.e. whether they have a counteracting (Opposite) or
 reinforcing (same) effect.
 
+
 The organizational elements we will consider are:
+
+{{< image src="/images/kata/organizational_elements_TO-ADD.png" alt="Elements to be added" size="50%" float="right" >}}
 
 * **Ability to rapidly change what we're working on:** The organization's ability to quickly change direction, also known as 'adaptability' or
   'business agility'.
@@ -97,29 +96,17 @@ The organizational elements we will consider are:
 * **# of Handovers:** The number of times a piece of work is handed over from one team to another.
 * **Lead Time:** The time it takes to deliver a piece of work from start (concept) to finish (delivered value in hands of end-users).
 
-![Elements to be added](/images/kata/organizational_elements_TO-ADD.png)
-
 #### Exercise
 
 Add the organizational elements to the diagram and identify the relationships between the elements.
 Focus on the primary relationships between the elements, and aim to map out the key interactions between the existing and new elements.
 There are no right or wrong answers, but the goal is to have a conversation about how the organizational elements impact the base system.
 
-The elements, and their definitions, are:
-
-* **Ability to rapidly change what we're working on**: "The organization's ability to quickly change direction, also known as 'adaptability' or
-  'business agility'."
-* **Commited scope, agreement on batch size**: "The organization's promise on what they will be delivering, and how large the increments will be."
-* **Organizational Complexity**: "The amount of different divisions within the company, the existence of prescriptive processes, and the
-  decision-making mechanism that are in place."
-* **# of Handovers**: "The number of times a piece of work is handed over from one team to another."
-* **Lead Time**: "The time it takes to deliver a piece of work from start (concept) to finish (delivered value in hands of end-users.")
-
-![Elements to be added](/images/kata/organizational_elements_CONNECT-US.png)
+{{< image src="/images/kata/organizational_elements_CONNECT-US.png" alt="Connect the organizational elements" size="100%" >}}
 
 #### Possible Solution
 
-![Connected the organizational elements](/images/kata/organizational_elements_CONNECTED.png)
+{{< image src="/images/kata/organizational_elements_CONNECTED.png" alt="Connected the organizational elements" size="60%" >}}
 
 ### **Step 3:** Add Timeliness Elements
 
