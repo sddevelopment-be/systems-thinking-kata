@@ -17,7 +17,7 @@
     {{ if $rawReferences }}
         {{ range $rawReference := (sort $rawReferences "author" "asc" ) }}
             <li>
-                {{ $rawReference.author }} ({{ $rawReference.year}}). <a href="{{ $rawReference.link }}" target="_blank" rel="noreferrer">{{ $rawReference.title }}</a>. {{$rawReference.site}}.  <br />{{$rawReference.link}}.
+                {{ $rawReference.author }} ({{ $rawReference.year}}). {{ $rawReference.title }}. {{ if $rawReference.publisher }} {{ if $rawReference.loc }}{{ $rawReference.loc }}:{{ end }} {{ $rawReference.publisher }}. {{if $rawReference.isbn }}isbn: {{$rawReference.isbn}}. {{ end }} {{ end }} {{if $rawReference.link}} <br /><a href="{{$rawReference.link}}" target="_blank" rel="noreferrer">{{if $rawReference.site }} {{ $rawReference.site }} {{ else }} {{$rawReference.link}}.{{ end }}</a>.{{end}}
             </li>
         {{ end }}
     {{ end }}

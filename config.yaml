@@ -50,6 +50,12 @@ params:
   font:
     name: "Open Sans"
     sizes: [400,600]
+  comments:
+    repo: 'sddevelopment-be/systems-thinking-kata'
+    repoId: 'R_kgDOM_mu8g'
+    category: 'General'
+    categoryId: 'DIC_kwDOM_mu8s4CkBKA'
+    theme: 'light'
 
   # Customizable navbar. For a dropdown, add a "sublinks" list.
   navbar:
