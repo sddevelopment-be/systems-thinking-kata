@@ -1,7 +1,7 @@
 @startuml
-title Causal Loop Diagram: Chickens, Eggs, and Roads
+title Causal Loop Diagram: Chickens, Eggs, and Road Crossings
 
-!include ./templates/puml-theme-stickies.puml
+!include ../templates/puml-theme-stickies.puml
 
 skinparam backgroundColor white
 skinparam linetype        ortho
@@ -11,8 +11,8 @@ Sticky(chickens, " # Chickens")
 Sticky(roadCrossings, " # Road \n Crossings")
 
 eggs -> chickens: " "
+chickens -> eggs: " "
 chickens -> roadCrossings: " "
 roadCrossings -> chickens: "O"
-chickens -> eggs: " "
 
 @enduml
