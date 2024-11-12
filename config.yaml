@@ -101,7 +101,7 @@ params:
         link: "https://github.com/stijn-dejongh/systems-thinking-kata"
 
   footer:
-    logo: logo_trans_border_scaled.webp
+    logo: LOGO_BASE_SMALL.webp
     socialmediatitle: Socials
     socialmedia:
     - link: https://github.com/stijn-dejongh/systems-thinking-kata

@@ -3,6 +3,11 @@
     url('/fonts/literta-font')
 }
 
+@font-face {
+    font-family: d-din;
+    url('/fonts/d-din')
+}
+
 .pattern {
     h3::before, h4::before {
         content: "";
@@ -16,6 +21,24 @@ body {
     font-family: literta, "Gill Sans", 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1.75rem;
+}
+
+.title .subtitle {
+    font-family: d-din, "Gill Sans", 'Open Sans', sans-serif;
+}
+
+.title-wrapper .title .title-wrapper .subtitle{
+    font-family: d-din, "Gill Sans", 'Open Sans', sans-serif !important;
+}
+
+.navbar {
+    font-family: d-din, "Gill Sans", 'Open Sans', sans-serif;
+    font-size: 1.125rem;
+}
+
+.sidebar {
+    font-family: d-din, "Gill Sans", 'Open Sans', sans-serif;
+    font-size: 0.85rem;
 }
 
 .navbar {
@@ -166,6 +189,10 @@ body {
 .content p::first-letter {
     font-size: 1.125rem;
     color: #1c3337;
+}
+
+.content h1, h2, h3, h4 {
+    font-family: d-din, "Gill Sans", 'Open Sans', sans-serif;
 }
 
 .content h2, h3, h4 {
