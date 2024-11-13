@@ -12,8 +12,8 @@
 
 skinparam backgroundColor $BGCOLOR
 
-!$STICKY_FONT_SIZE = 20
-!$TECHN_FONT_SIZE = 10
+!$STICKY_FONT_SIZE = 22
+!$TECHN_FONT_SIZE = 14
 
 !$WHITE = "#fff"
 !$GRAY_DARK = "#5a5a5a"
@@ -81,16 +81,16 @@ skinparam backgroundColor $BGCOLOR
 ''
 '' Global Default Values
 ''
-skinparam defaultFontName        "Verdana"
-skinparam defaultFontSize        14
+skinparam defaultFontName        "d-din"
+skinparam defaultFontSize        18
 skinparam dpi                    100
 skinparam shadowing              true
 skinparam roundcorner            20
 skinparam ParticipantPadding     30
-skinparam BoxPadding             40
+skinparam BoxPadding             42
 skinparam Padding                14
 skinparam ArrowColor             $PRIMARY_DARK
-skinparam nodesep                62
+skinparam nodesep                68
 skinparam ranksep                42
 skinparam maxMessageSize         224
 skinparam wrapWidth              224
@@ -152,11 +152,16 @@ skinparam agent {
 skinparam arrow {
 '	FontName Impact
 	Thickness 2.5
-	FontSize 18
+	FontSize 16
 	Color $PRIMARY_DARK
 	FontColor $PRIMARY_DARK
 }
 !endsub
+
+skinparam arrow<<opp>> {
+	Color $DANGER_DARK
+	FontColor $DANGER_DARK
+}
 
 !startsub boundary
 skinparam boundary {
@@ -238,7 +243,7 @@ skinparam class {
 	BorderThickness 2
 	BorderColor $PRIMARY_DARK
 	AttributeFontColor $LIGHT
-	AttributeFontSize 12
+	AttributeFontSize 14
 }
 !endsub
 
@@ -249,7 +254,7 @@ skinparam object {
 	StereotypeFontColor $DARK
 	BorderThickness 1
 	AttributeFontColor $LIGHT
-	AttributeFontSize 11
+	AttributeFontSize 14
 }
 !endsub
 

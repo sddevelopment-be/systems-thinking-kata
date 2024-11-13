@@ -8,12 +8,17 @@
     url('/fonts/d-din')
 }
 
+
+.content h2:not(:first-child) {
+    margin-top: 3.75rem;
+}
+
 .pattern {
-    h3::before, h4::before {
+    h3::before, h4::before, h2::before {
         content: "";
         display: block;
         height: 6rem; /* fixed header height*/
-        margin: -6rem 0 0; /* negative fixed header height */
+        margin: -4.75rem 0 0; /* negative fixed header height */
     }
 }
 
@@ -23,7 +28,7 @@ body {
     line-height: 1.75rem;
 }
 
-.title .subtitle {
+h1, h2, h3, h4, h5, h6 {
     font-family: d-din, "Gill Sans", 'Open Sans', sans-serif;
 }
 
@@ -498,4 +503,8 @@ footer.footer-dark .footer-column ul.link-list a:hover {
     .section.is-medium {
         padding: 5.25rem 4.5rem;
     }
+}
+
+code {
+    color: #1e75c0;
 }
