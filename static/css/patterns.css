@@ -893,6 +893,7 @@
 }
 
 .related summary {
+    font-family: d-din, "Gill Sans", 'Open Sans', sans-serif;
     font-size: 1.125rem;
     padding: 0.75rem;
     text-align: center;
@@ -905,6 +906,7 @@
 }
 
 .related .related-content {
+    font-family: d-din, "Gill Sans", 'Open Sans', sans-serif;
     font-size: 0.875rem;
     padding: 0 2.75rem 1.5rem 2.75rem;
 }

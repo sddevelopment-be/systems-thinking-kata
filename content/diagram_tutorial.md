@@ -81,7 +81,7 @@ The relationship between these two nodes is that `chickens` lay `eggs`, and `egg
 the amount of `chickens` increases the amount of `eggs`, which in turn increases the amount of `chickens`.
 This gives us a causal loop diagram that looks like this:
 
-{{< image src="/images/diagramming/chickens_and_eggs.svg" alt="Causal Loop Diagram for chickens and eggs" size="50%" >}}
+{{< image src="/images/diagramming/chickens_and_eggs.svg" alt="Causal Loop Diagram for chickens and eggs" size="40%" >}}
 
 
 ### Chickens and Roads
@@ -94,7 +94,7 @@ So, as the amount of `chickens` increases, the amount of `road crossings` also i
 And as any road safety officer will tell you, the more `road crossings` you have, the more likely you are to have `chickens` being run over.
 Hence: as the amount of road crossing increases, the amount of chickens decreases.
 
-{{< image src="/images/diagramming/chickens_and_roads.svg" alt="Causal Loop Diagram for chickens crossing the road" size="50%" >}}
+{{< image src="/images/diagramming/chickens_and_roads.svg" alt="Causal Loop Diagram for chickens crossing the road" size="40%" >}}
 
 ### Chickens, Eggs, and Roads
 
@@ -102,7 +102,7 @@ Now, let's combine these two systems into one big system. We end up with our thr
 road crossings`. Note that there is no direct relationship between `eggs` and `road crossings`, so we don't need to draw a link between them.
 This gives us a causal loop diagram that looks like this:
 
-{{< image src="/images/diagramming/chickens_eggs_roads.svg" alt="Causal Loop Diagram for chickens, eggs, and road crossings" size="80%" >}}
+{{< image src="/images/diagramming/chickens_eggs_roads.svg" alt="Causal Loop Diagram for chickens, eggs, and road crossings" size="40%" >}}
 
 We have now created a simple causal loop diagram that shows the relationships between chickens, eggs, and road crossings. This diagram helps us 
 reason about the system and understand how changes in one element can affect the others. As we add more nodes and links to the diagram, we can 
@@ -116,17 +116,69 @@ These will help you create more detailed and accurate models of complex systems 
 
 ## Feedback Loops
 
-### Balancing Feedback
+A key concept in systems thinking is the idea of `feedback loops`. 
+Feedback loops are the mechanisms through which changes in one part of a system are amplified or dampened by the system itself. 
+It is important to understand the different types of feedback loops, as they can have a significant impact on the behavior of a system.
 
 ### Reinforcing Feedback
 
+Consider our "chickens and eggs" example. 
+The relationship between the elements `chickens` and `eggs` is an example of a `reinforcing feedback loop`. 
+Meaning that an increase in one element leads to an increase in the other, which in turn leads to a further increase in the first element.
+Note that as the relationship is identical, a decrease in one element will lead to a decrease in the other.
+
+{{< info text="This type of feedback loop can lead to exponential growth or decline in a system." >}}
+
+In some depictions, this type of feedback loop is indicated by an 'R' character with a loop around it. Reinforcing feedback loops 
+are also called `positive feedback loops` sometimes.
+
+### Balancing Feedback
+
+In our "chickens and roads" example, the amount of 'road crossings' evolves similarly to the amount of 'chickens'.
+This means that as the number of 'chickens' increases, the number of 'road crossings' increases as well. 
+And when the number of 'children' decreases, the number of 'road crossings' decreases as well.
+Many of those chickens will be run over, which will decrease the number of chickens. So as the amount of `road crossings` increases, the amount 
+of chickens decreases, which in turn decreases the amount of `road crossings`.
+
+This is a prime example of a **"balancing feedback loop"**. A balancing feedback loop is a stabilizing mechanism that tends to keep a system in 
+some sort of equilibrium (a fancy word for "balance"). As time goes on, the system will tend to stabilize itself around a certain value.
+In nature, this is often referred to as the "homeostasis" of an ecosystem. Think about the predator-prey relationship between wolves and deer. 
+As the number of wolves increases, they eat more deer, which decreases the number of deer. The wolves then have less to eat, so their numbers 
+start dwindling. This in turn allows the deer population to recover, and the cycle starts anew.
+
+{{< info text="This type of feedback loop can lead to oscillations around a certain value. Even if the system is never truly in an equilibrium, it will average out around it" >}}
+
+In some depictions, this type of feedback loop is indicated by a 'B' character with a loop around it.
+Balancing feedback loops are also called `negative feedback loops` sometimes.
+
 ## Real-world Examples
 
-{{< image src="/images/diagramming/economic_feedback_loop.png" 
+Below are some real-world examples of causal loop diagrams. These diagrams are used to model complex systems and understand the relationships 
+between various elements within them. They can help us identify the feedback loops that exist within the system and predict how seemingly small, 
+local, changes can have far-reaching consequences.
+
+
+
+### Electrical Mini-Grids
+
+The diagram below illustrates the economical impact of using electrical mini-grids to counter challenges with centralized electrical 
+facilities. Most notably, they are seen as a way to provide electricity to remote areas that are not connected to the main grid. They can also 
+be used to ensure a more stable local supply of electricity, to reduce the risk of full-scale blackouts and ensure a more stable supply of 
+electrical power. If you are interested in the full research paper, you can find it [on the Research Gate website](https://www.researchgate.net/publication/320282073_The_economic_impact_of_electrical_mini-grids_in_rural_India).
+
+{{< image src="/images/diagramming/economic_feedback_loop.png"
   alt="Causal loop diagram illustrating economical concepts."
   size="80%" caption="Economical impact of electrical mini-grids. Image by Michael Stadler, et al. source: ResearchGate" >}}
 
+The included diagram shows the relationships between the different elements of the system. The diagram is used to illustrate the economical 
+impact of introducing electrical mini-grids in rural India. We can identify several feedback loops in the diagram, such as the reinforcing loop 
+on the "local economical demand". And we can easily spot the balancing feedback loop between "Electricity usage" and "Power availability".
 
-
-
-
+{{< tip text=`
+To grasp the full complexity of systems, such as this one, try and figure out what happens when you change the value of a single element in 
+the diagram. For example, what happens if the "local economical demand" increases? Or what happens if the "power availability" decreases? 
+  
+Follow the arrows (trace them with your finger or a pen) and see how the changes propagate through the system. More often than not, you will 
+have touched upon nearly all elements in the diagram and usually end up back at the starting point. You will have a better understanding of the 
+modelled system interactions and the impact a single change can have. You might also end up with a slight headache. 
+` >}}
