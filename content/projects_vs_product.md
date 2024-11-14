@@ -119,9 +119,8 @@ There are no right or wrong answers, but the goal is to have a conversation abou
 <summary>Click here to view a potential solution</summary>
 
 {{< image src="/images/kata/organizational_elements_CONNECTED.png" alt="Connected the organizational elements">}}
+
 </details>
-
-
 
 ### **Step 3:** Add Timeliness Elements
 

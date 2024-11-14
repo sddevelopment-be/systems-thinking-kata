@@ -6,6 +6,8 @@
 skinparam backgroundColor white
 skinparam linetype disabled
 
+left to right direction
+
 Boundary(core, "core elements") {
 	Sticky(customer_satisfaction, "Customer Satisfaction Rate", "The business goal of the organization.")
   Sticky(alignment_to_market, "Alignment between product and customer needs", "The degree to which the product meets the needs of the customer.")
@@ -15,13 +17,28 @@ Boundary(core, "core elements") {
    loop_length -up-> alignment_to_market: "O"
 }
 
-Boundary(organizational, "organizational elements") {
+'Boundary(organizational, "organizational elements") {
 	Sticky(adaptability, "Ability to rapidly change what we're working on", "The organization's ability to quickly change direction, also known as 'adaptability' or 'business agility'.")
 	Sticky(scope, "Commited scope, agreement on batch size", "The organization's promise on what they will be delivering, and how large the increments will be.")
   Sticky(complexity, "Organizational Complexity", "The amount of different divisions within the company, the existence of prescriptive processes, and the decision-making mechanism that are in place.")
   Sticky(handovers, " # of Handovers", "The number of times a piece of work is handed over from one team to another.")
   Sticky(lead_time, "Lead Time", "The time it takes to deliver a piece of work from start (concept) to finish (delivered value in hands of end-users.")
-}
+'}
+
+'Boundary(timeliness, "timeliness elements") {
+	Sticky(deadline, "Time pressure", "")
+	Sticky(quality, "Quality", "")
+	Sticky(ownership, "Ownership", "The feeling of responsibility for the product by the team that is working on it.")
+	Sticky(team_stability, "Team Stability", "How fixed / temporary people are part of the team.")
+	Sticky(e2e_agency, "End-to-end agency", "Ability to deliver value independently.")
+'}
+
+'Boundary(risks, "risk mitigation elements") {
+'	Sticky(bus_validation, " # Opportunities for business case validation", "")
+'	Sticky(overrun, "Risk of overruns", "")
+'	Sticky(risk_avoidance, "Risk Avoiding Behaviour", "")
+'	Sticky(training, "Onboarding / Offboarding cost", "")
+'}
 
 adaptability -left-> alignment_to_market
 handovers -right-> adaptability : "O"
@@ -29,5 +46,14 @@ scope -left-> adaptability : "O"
 complexity -right-> handovers
 handovers -up-> lead_time
 lead_time -up-> loop_length
+
+quality --> lead_time : "O"
+deadline -right-> quality : "O"
+e2e_agency -right-> ownership
+e2e_agency --> handovers : "O"
+ownership -down-> quality
+team_stability --> ownership
+
+complexity -right-> e2e_agency : "O"
 
 @enduml
