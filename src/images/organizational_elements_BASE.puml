@@ -1,5 +1,5 @@
 @startuml
-title Causal Loop Diagram: Project versus Product
+'title Causal Loop Diagram: Project versus Product
 
 !include ../templates/puml-theme-stickies.puml
 

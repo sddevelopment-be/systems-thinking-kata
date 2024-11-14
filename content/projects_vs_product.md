@@ -60,19 +60,28 @@ have while creating them. The example solution is meant to facilitate these disc
 
 {{< info text=`We should have customer focus -- deliver as much value to our customers as possible.` >}}
 
+
 The base elements are the core elements that are essential to the business goal of the organization. In this case, the core premise is that the
 organization should have a customer focus and deliver as much value to their customers as possible. As such, we will identify the following key
 elements that make up the base system:
+
 
 * **Customer Satisfaction Rate:** The business goal of the organization.
 * **Alignment between product and customer needs:** The degree to which the product meets the needs of the customer.
 * **Length of the feedback loop:** The time it takes to get feedback from the customer.
 
-The diagram below shows the relationship between these elements.
+### Exercise
 
-{{< image src="/images/kata/value_delivery-PART_1.png" alt="Core elements" size="50%" >}}
+Using the provided base elements, create a causal loop diagram that shows the relationships between the
+elements. Focus on the primary relationships between the elements, and aim to map out the key interactions between the elements.
 
-You can find the editable version of this diagram in the `src` folder: [`src/kata/base-system.puml`](src/images/base-system.puml).
+{{< image src="/images/kata/base_elements_CONNECT-US.png" alt="Core elements" size="50%">}}
+
+<details class="content pattern related">
+<summary>Click here to view a potential solution</summary>
+
+{{< image src="/images/kata/value_delivery-PART_1.png" alt="Core elements" >}}
+</details>
 
 ### **Step 2:** Add Organizational Elements
 
@@ -104,9 +113,14 @@ There are no right or wrong answers, but the goal is to have a conversation abou
 
 {{< image src="/images/kata/organizational_elements_CONNECT-US.png" alt="Connect the organizational elements" size="100%" >}}
 
-#### Possible Solution
 
-{{< image src="/images/kata/organizational_elements_CONNECTED.png" alt="Connected the organizational elements" size="60%" >}}
+<details class="content pattern related">
+<summary>Click here to view a potential solution</summary>
+
+{{< image src="/images/kata/organizational_elements_CONNECTED.png" alt="Connected the organizational elements">}}
+</details>
+
+
 
 ### **Step 3:** Add Timeliness Elements
 
