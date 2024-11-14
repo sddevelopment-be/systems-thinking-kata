@@ -1,5 +1,5 @@
 @startuml
-title Causal Loop Diagram: Value Delivery System
+title Causal Loop Diagram: Project versus Product
 
 !include ../templates/puml-theme-stickies.puml
 
@@ -15,13 +15,13 @@ Boundary(core, "core elements") {
    loop_length -up-> alignment_to_market: "O"
 }
 
-'Boundary(organizational, "organizational elements") {
+Boundary(organizational, "organizational elements") {
 	Sticky(adaptability, "Ability to rapidly change what we're working on", "The organization's ability to quickly change direction, also known as 'adaptability' or 'business agility'.")
 	Sticky(scope, "Commited scope, agreement on batch size", "The organization's promise on what they will be delivering, and how large the increments will be.")
   Sticky(complexity, "Organizational Complexity", "The amount of different divisions within the company, the existence of prescriptive processes, and the decision-making mechanism that are in place.")
   Sticky(handovers, " # of Handovers", "The number of times a piece of work is handed over from one team to another.")
   Sticky(lead_time, "Lead Time", "The time it takes to deliver a piece of work from start (concept) to finish (delivered value in hands of end-users.")
-'}
+}
 
 adaptability -left-> alignment_to_market
 handovers -right-> adaptability : "O"

@@ -89,9 +89,13 @@ references = [
     { title = "Systems Thinking For Social Change: A Practical Guide to Solving Complex Problems, Avoiding Unintended Consequences, and Achieving Lasting Results by David Peter Stroh", link = "https://www.amazon.com/Systems-Thinking-Social-Change-Consequences/dp/160358580X" }
 ]
 
-
-
-
-
-
+[[terminology]]
+name = "Feedback Loops"
+abbreviation = ""
+domain = "Systems Thinking"
+description = """
+Feedback loops are the mechanisms through which changes in one part of a system are amplified or dampened by the system itself.
+It is important to understand the different types of feedback loops, as they can have a significant impact on the behavior of a system.
+"""
+aliases = ["Loops", "Cycles"]
 
