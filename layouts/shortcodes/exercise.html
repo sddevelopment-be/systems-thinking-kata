@@ -1,0 +1,8 @@
+{{ $text := .Get "text" }}
+
+<div class="alert-container">
+    <blockquote class="groucho action">
+        <span class="action-title">Exercise:</span>
+        {{ $text | markdownify }}
+    </blockquote>
+</div>

@@ -176,6 +176,37 @@
     margin-right: 0.75rem;
 }
 
+.action-title {
+    color: #471a8b;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 350;
+    margin-right: 0.75rem;
+}
+
+.action {
+    color: #1f2226;
+    border-left: 4px solid #471a8b !important;
+    padding-right: 4.75rem !important;
+}
+
+.action:after {
+    content: '📝';
+    position: absolute;
+    top: 0.28em;
+    right: 0;
+    font-size: 2.75em;
+    font-style: italic;
+    color: #471a8b85;
+    z-index: -1;
+    box-sizing: border-box;
+    opacity: 0.65;
+}
+
+.action footer {
+    color: #190735;
+}
+
 @media (max-width: 800px) {
     .alert-container {
         padding: 0.75rem;

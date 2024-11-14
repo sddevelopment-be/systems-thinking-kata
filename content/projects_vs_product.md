@@ -70,10 +70,10 @@ elements that make up the base system:
 * **Alignment between product and customer needs:** The degree to which the product meets the needs of the customer.
 * **Length of the feedback loop:** The time it takes to get feedback from the customer.
 
-### Exercise
-
+{{< exercise text=`
 Using the provided base elements, create a causal loop diagram that shows the relationships between the
 elements. Focus on the primary relationships between the elements, and aim to map out the key interactions between the elements.
+` >}}
 
 {{< image src="/images/kata/base_elements_CONNECT-US.png" alt="Core elements" size="50%">}}
 
@@ -105,11 +105,12 @@ The organizational elements we will consider are:
 * **# of Handovers:** The number of times a piece of work is handed over from one team to another.
 * **Lead Time:** The time it takes to deliver a piece of work from start (concept) to finish (delivered value in hands of end-users).
 
-#### Exercise
 
+{{< exercise text=`
 Add the organizational elements to the diagram and identify the relationships between the elements.
 Focus on the primary relationships between the elements, and aim to map out the key interactions between the existing and new elements.
 There are no right or wrong answers, but the goal is to have a conversation about how the organizational elements impact the base system.
+` >}}
 
 {{< image src="/images/kata/organizational_elements_CONNECT-US.png" alt="Connect the organizational elements" size="100%" >}}
 
@@ -124,6 +125,12 @@ There are no right or wrong answers, but the goal is to have a conversation abou
 
 ### **Step 3:** Add Timeliness Elements
 
+{{< stub >}}
+
 ### **Step 4:** Add Risk Mitigation Elements
 
+{{< stub >}}
+
 ## **Round-Up:** Conclusions and Learnings
+
+{{< stub >}}
