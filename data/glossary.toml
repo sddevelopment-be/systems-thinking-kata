@@ -99,3 +99,41 @@ It is important to understand the different types of feedback loops, as they can
 """
 aliases = ["Loops", "Cycles"]
 
+[[terminology]]
+name = "Time Pressure"
+abbreviation = ""
+domain = "Psychology"
+description = """
+A type of psychological stress that occurs when there is less (perceived) time available than is required to complete a task.
+"""
+aliases = ["Deadline Pressure", "Urgency"]
+references = [
+]
+
+[[terminology]]
+name = "Adaptability"
+abbreviation = ""
+domain = ""
+description = """
+Ability to rapidly change what we're working on, The organization's ability to quickly change direction.
+"""
+aliases = ["Business Agility", "Flexibility"]
+references = [
+]
+
+[[terminology]]
+name = "Lead Time"
+abbreviation = ""
+domain = ""
+description = """
+The time it takes to deliver a piece of work from start (concept) to finish (delivered value in hands of end-users.
+The amount of time between the initiation of some process and its completion,
+e.g. the time required to manufacture or procure a product; the time required before something can be provided or delivered.
+"""
+aliases = []
+references = [
+    { title = "Lead Time on wikipedia", link = "https://en.wikipedia.org/wiki/Lead_time" },
+    { title = "Lead Time on Investopedia", link = "https://www.investopedia.com/terms/l/leadtime.asp" },
+    { title = "Lead Time vs. Cycle Time", link = "https://waydev.co/lead-time-vs-cycle-time/" },
+    { title = "Reducing Lead Time in warehousing & Manufacturing", link = "https://www.conger.com/reduce-lead-time//" }
+]

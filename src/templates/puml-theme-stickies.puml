@@ -369,6 +369,31 @@ skinparam rectangle<<sticky>> {
     BorderThickness           2
 }
 
-!unquoted procedure Sticky($alias, $label, $descr="", $sprite="")
-rectangle "$getContainer($label, $descr, $sprite)" <<sticky>> as $alias
+skinparam rectangle<<sticky, yellow>> {
+  BackgroundColor           $PRIMARY_STICKY
+  BorderColor               $SECONDARY_STICKY
+}
+
+skinparam rectangle<<sticky, orange>> {
+  BackgroundColor           $PRIMARY_STICKY
+  BorderColor               $SECONDARY_STICKY
+}
+
+skinparam rectangle<<sticky, pink>> {
+  BackgroundColor           $PRIMARY_STICKY
+  BorderColor               $SECONDARY_STICKY
+}
+
+skinparam rectangle<<sticky, green>> {
+  BackgroundColor           $PRIMARY_STICKY
+  BorderColor               $SECONDARY_STICKY
+}
+
+skinparam rectangle<<sticky, blue>> {
+  BackgroundColor           $PRIMARY_STICKY
+  BorderColor               $SECONDARY_STICKY
+}
+
+!unquoted procedure Sticky($alias, $label, $descr="", $sprite="", $color="yellow")
+rectangle "$getContainer($label, $descr, $sprite)" <<sticky, $color>> as $alias
 !endprocedure

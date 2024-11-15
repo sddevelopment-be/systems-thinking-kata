@@ -1,21 +1,22 @@
 @startuml
-'title Causal Loop Diagram: Project versus Product
+title Causal Loop Diagram: Project versus Product
 
 !include ../templates/puml-theme-stickies.puml
 
 skinparam backgroundColor white
 skinparam linetype disabled
+skinparam dpi 220
 
 left to right direction
 
-Boundary(core, "core elements") {
+'Boundary(core, "core elements") {
 	Sticky(customer_satisfaction, "Customer Satisfaction Rate", "The business goal of the organization.")
   Sticky(alignment_to_market, "Alignment between product and customer needs", "The degree to which the product meets the needs of the customer.")
   Sticky(loop_length, "Length of the feedback loop", "The time it takes to get feedback from the customer.")
 
-   alignment_to_market -left-> customer_satisfaction: " "
-   loop_length -up-> alignment_to_market: "O"
-}
+ alignment_to_market -up-> customer_satisfaction: " "
+  loop_length -left-> alignment_to_market: "O"
+'}
 
 'Boundary(organizational, "organizational elements") {
 	Sticky(adaptability, "Ability to rapidly change what we're working on", "The organization's ability to quickly change direction, also known as 'adaptability' or 'business agility'.")
@@ -26,34 +27,48 @@ Boundary(core, "core elements") {
 '}
 
 'Boundary(timeliness, "timeliness elements") {
-	Sticky(deadline, "Time pressure", "")
-	Sticky(quality, "Quality", "")
+	Sticky(deadline, "Time pressure", "A type of psychological stress that occurs when there is less (perceived) time available than is required to complete a task.")
+	Sticky(quality, "Quality", "The build quality of the delivered artifacts. (e.g. Maintainability, lack of technical debt, lack of defects)")
 	Sticky(ownership, "Ownership", "The feeling of responsibility for the product by the team that is working on it.")
 	Sticky(team_stability, "Team Stability", "How fixed / temporary people are part of the team.")
 	Sticky(e2e_agency, "End-to-end agency", "Ability to deliver value independently.")
 '}
 
 'Boundary(risks, "risk mitigation elements") {
-'	Sticky(bus_validation, " # Opportunities for business case validation", "")
-'	Sticky(overrun, "Risk of overruns", "")
-'	Sticky(risk_avoidance, "Risk Avoiding Behaviour", "")
-'	Sticky(training, "Onboarding / Offboarding cost", "")
+together {
+	Sticky(bus_validation, "  # Inspection Opportunities", "Amount of chances to validate the business cases the organization is working to support/enable.")
+	Sticky(overrun, "Risk of overruns", "The risk of a delivery costing significantly more than what we were initially willing to invest in it. (Sunk Cost)")
+	Sticky(risk_avoidance, "Risk Avoidance", "Focusing on avoiding risks, rather than delivering valuable features. Favouring output over outcome. (e.g. scope negotiation, risk management, politics, window dressing)")
+}
+	Sticky(training, "Onboarding / Offboarding cost", "Additional effort required to bring new team members up to speed, or to ensure a smooth transition when team members leave.")
 '}
 
-adaptability -left-> alignment_to_market
-handovers -right-> adaptability : "O"
-scope -left-> adaptability : "O"
-complexity -right-> handovers
-handovers -up-> lead_time
-lead_time -up-> loop_length
+
+
+adaptability --> alignment_to_market
+handovers --> adaptability : "O"
+scope --> adaptability : "O"
+complexity --> handovers
+handovers --> lead_time
+lead_time --> loop_length
 
 quality --> lead_time : "O"
-deadline -right-> quality : "O"
-e2e_agency -right-> ownership
+deadline --> quality : "O"
+e2e_agency --> ownership
 e2e_agency --> handovers : "O"
-ownership -down-> quality
+ownership --> quality
 team_stability --> ownership
+complexity --> e2e_agency : "O"
 
-complexity -right-> e2e_agency : "O"
+loop_length --> bus_validation : "O"
+'loop_length -[hidden]-> bus_validation
+bus_validation --> alignment_to_market
+
+bus_validation --> overrun : "O"
+overrun --> risk_avoidance
+deadline --> risk_avoidance
+risk_avoidance --> adaptability: "O"
+
+team_stability --> training: "O"
 
 @enduml
