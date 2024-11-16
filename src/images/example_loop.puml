@@ -13,6 +13,6 @@ Sticky(roadCrossings, " # Road \n Crossings")
 eggs -> chickens: " "
 chickens -> eggs: " "
 chickens -> roadCrossings: " "
-roadCrossings [´]-> chickens: "O"
+roadCrossings -> chickens: "O"
 
 @enduml

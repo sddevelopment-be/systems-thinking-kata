@@ -29,7 +29,7 @@ skinparam backgroundColor $BGCOLOR
 
 !$FGCOLOR = $DARK
 !$PRIMARY_LIGHT = "#1c75cc"
-!$PRIMARY_DARK = "#202138"
+!$PRIMARY_DARK = "#0A0721"
 !$PRIMARY_TEXT = $WHITE
 !$SECONDARY_LIGHT = "#f5f5f5"
 !$SECONDARY_DARK = "#c2c2c2"
@@ -370,13 +370,15 @@ skinparam rectangle<<sticky>> {
 }
 
 skinparam rectangle<<sticky, yellow>> {
+	FontColor                 #0A0721
   BackgroundColor           $PRIMARY_STICKY
   BorderColor               $SECONDARY_STICKY
 }
 
 skinparam rectangle<<sticky, orange>> {
-  BackgroundColor           $PRIMARY_STICKY
-  BorderColor               $SECONDARY_STICKY
+	FontColor                 #160909
+  BackgroundColor           #DBA872
+  BorderColor               #9A4C2E
 }
 
 skinparam rectangle<<sticky, pink>> {
@@ -385,8 +387,9 @@ skinparam rectangle<<sticky, pink>> {
 }
 
 skinparam rectangle<<sticky, green>> {
-  BackgroundColor           $PRIMARY_STICKY
-  BorderColor               $SECONDARY_STICKY
+	FontColor                 #0C1D0C
+  BackgroundColor           #99DB84
+  BorderColor               #389545
 }
 
 skinparam rectangle<<sticky, blue>> {
@@ -394,6 +397,31 @@ skinparam rectangle<<sticky, blue>> {
   BorderColor               $SECONDARY_STICKY
 }
 
-!unquoted procedure Sticky($alias, $label, $descr="", $sprite="", $color="yellow")
-rectangle "$getContainer($label, $descr, $sprite)" <<sticky, $color>> as $alias
+skinparam rectangle<<sticky, purple>> {
+  BackgroundColor           $PRIMARY_STICKY
+  BorderColor               $SECONDARY_STICKY
+}
+
+!unquoted procedure Sticky_Purple($alias, $label, $descr="", $sprite="")
+rectangle "$getContainer($label, $descr, $sprite)" <<sticky, purple>> as $alias
+!endprocedure
+
+!unquoted procedure Sticky_Pink($alias, $label, $descr="", $sprite="")
+rectangle "$getContainer($label, $descr, $sprite)" <<sticky, pink>> as $alias
+!endprocedure
+
+!unquoted procedure Sticky_Blue($alias, $label, $descr="", $sprite="")
+rectangle "$getContainer($label, $descr, $sprite)" <<sticky, blue>> as $alias
+!endprocedure
+
+!unquoted procedure Sticky_Orange($alias, $label, $descr="", $sprite="")
+rectangle "$getContainer($label, $descr, $sprite)" <<sticky, orange>> as $alias
+!endprocedure
+
+!unquoted procedure Sticky_Green($alias, $label, $descr="", $sprite="")
+rectangle "$getContainer($label, $descr, $sprite)" <<sticky, green>> as $alias
+!endprocedure
+
+!unquoted procedure Sticky($alias, $label, $descr="", $sprite="")
+rectangle "$getContainer($label, $descr, $sprite)" <<sticky, yellow>> as $alias
 !endprocedure

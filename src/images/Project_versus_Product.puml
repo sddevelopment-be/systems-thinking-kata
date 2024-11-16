@@ -10,9 +10,9 @@ skinparam dpi 220
 left to right direction
 
 'Boundary(core, "core elements") {
-	Sticky(customer_satisfaction, "Customer Satisfaction Rate", "The business goal of the organization.")
-  Sticky(alignment_to_market, "Alignment between product and customer needs", "The degree to which the product meets the needs of the customer.")
-  Sticky(loop_length, "Length of the feedback loop", "The time it takes to get feedback from the customer.")
+	Sticky_Green(customer_satisfaction, "Customer Satisfaction Rate", "The business goal of the organization.")
+  Sticky_Green(alignment_to_market, "Alignment between product and customer needs", "The degree to which the product meets the needs of the customer.")
+  Sticky_Green(loop_length, "Length of the feedback loop", "The time it takes to get feedback from the customer.")
 
  alignment_to_market -up-> customer_satisfaction: " "
   loop_length -left-> alignment_to_market: "O"
@@ -27,11 +27,11 @@ left to right direction
 '}
 
 'Boundary(timeliness, "timeliness elements") {
-	Sticky(deadline, "Time pressure", "A type of psychological stress that occurs when there is less (perceived) time available than is required to complete a task.")
-	Sticky(quality, "Quality", "The build quality of the delivered artifacts. (e.g. Maintainability, lack of technical debt, lack of defects)")
-	Sticky(ownership, "Ownership", "The feeling of responsibility for the product by the team that is working on it.")
-	Sticky(team_stability, "Team Stability", "How fixed / temporary people are part of the team.")
-	Sticky(e2e_agency, "End-to-end agency", "Ability to deliver value independently.")
+	Sticky_Orange(deadline, "Time pressure", "A type of psychological stress that occurs when there is less (perceived) time available than is required to complete a task.")
+	Sticky_Orange(quality, "Quality", "The build quality of the delivered artifacts. (e.g. Maintainability, lack of technical debt, lack of defects)")
+	Sticky_Orange(ownership, "Ownership", "The feeling of responsibility for the product by the team that is working on it.")
+	Sticky_Orange(team_stability, "Team Stability", "How fixed / temporary people are part of the team.")
+	Sticky_Orange(e2e_agency, "End-to-end agency", "Ability to deliver value independently.")
 '}
 
 'Boundary(risks, "risk mitigation elements") {
