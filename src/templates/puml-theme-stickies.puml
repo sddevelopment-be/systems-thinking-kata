@@ -1,8 +1,8 @@
 ''
-'' A blue gray theme
+'' A sticky note inspired theme for PlantUML
 ''
-'' Author: Brett Schwarz
-'' Copyright (c) 2019 by Brett Schwarz
+'' Author: Stijn Dejongh
+'' Copyright (c) 2024, SD Development BV
 
 !$THEME = "bluegray"
 
@@ -381,11 +381,6 @@ skinparam rectangle<<sticky, orange>> {
   BorderColor               #9A4C2E
 }
 
-skinparam rectangle<<sticky, pink>> {
-  BackgroundColor           $PRIMARY_STICKY
-  BorderColor               $SECONDARY_STICKY
-}
-
 skinparam rectangle<<sticky, green>> {
 	FontColor                 #0C1D0C
   BackgroundColor           #99DB84
@@ -393,13 +388,21 @@ skinparam rectangle<<sticky, green>> {
 }
 
 skinparam rectangle<<sticky, blue>> {
-  BackgroundColor           $PRIMARY_STICKY
-  BorderColor               $SECONDARY_STICKY
+  FontColor                 #070829
+  BackgroundColor           #9EBDCC
+  BorderColor               #517B9A
 }
 
 skinparam rectangle<<sticky, purple>> {
-  BackgroundColor           $PRIMARY_STICKY
-  BorderColor               $SECONDARY_STICKY
+  FontColor                 #070829
+  BackgroundColor           #9B8EC8
+  BorderColor               #8732C8
+}
+
+skinparam rectangle<<sticky, pink>> {
+  FontColor                 #070829
+  BackgroundColor           #C89DB6
+  BorderColor               #C8479A
 }
 
 !unquoted procedure Sticky_Purple($alias, $label, $descr="", $sprite="")
@@ -424,4 +427,20 @@ rectangle "$getContainer($label, $descr, $sprite)" <<sticky, green>> as $alias
 
 !unquoted procedure Sticky($alias, $label, $descr="", $sprite="")
 rectangle "$getContainer($label, $descr, $sprite)" <<sticky, yellow>> as $alias
+!endprocedure
+
+!unquoted procedure s($start, $end, $descr="")
+same($start, $end, $descr)
+!endprocedure
+
+!unquoted procedure same($start, $end, $descr="")
+$start -[#072D5B]-> $end
+!endprocedure
+
+!unquoted procedure o($start, $end, $descr="")
+opposite($start, $end, $descr)
+!endprocedure
+
+!unquoted procedure opposite($start, $end, $descr="")
+$start -[#A9202E]-> $end : "<color: #A9202E><b>O</b></color>"
 !endprocedure

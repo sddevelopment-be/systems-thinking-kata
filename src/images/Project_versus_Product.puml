@@ -5,7 +5,8 @@ title Causal Loop Diagram: Project versus Product
 
 skinparam backgroundColor white
 skinparam linetype disabled
-skinparam dpi 220
+skinparam dpi 240
+
 
 left to right direction
 
@@ -14,7 +15,7 @@ left to right direction
   Sticky_Green(alignment_to_market, "Alignment between product and customer needs", "The degree to which the product meets the needs of the customer.")
   Sticky_Green(loop_length, "Length of the feedback loop", "The time it takes to get feedback from the customer.")
 
- alignment_to_market -up-> customer_satisfaction: " "
+  alignment_to_market -up-> customer_satisfaction: " "
   loop_length -left-> alignment_to_market: "O"
 '}
 
@@ -36,39 +37,37 @@ left to right direction
 
 'Boundary(risks, "risk mitigation elements") {
 together {
-	Sticky(bus_validation, "  # Inspection Opportunities", "Amount of chances to validate the business cases the organization is working to support/enable.")
-	Sticky(overrun, "Risk of overruns", "The risk of a delivery costing significantly more than what we were initially willing to invest in it. (Sunk Cost)")
-	Sticky(risk_avoidance, "Risk Avoidance", "Focusing on avoiding risks, rather than delivering valuable features. Favouring output over outcome. (e.g. scope negotiation, risk management, politics, window dressing)")
+	Sticky_Blue(bus_validation, "  # Inspection Opportunities", "Amount of chances to validate the business cases the organization is working to support/enable.")
+	Sticky_Blue(overrun, "Risk of overruns", "The risk of a delivery costing significantly more than what we were initially willing to invest in it. (Sunk Cost)")
+	Sticky_Blue(risk_avoidance, "Risk Avoidance", "Focusing on avoiding risks, rather than delivering valuable features. Favouring output over outcome. (e.g. scope negotiation, risk management, politics, window dressing)")
 }
-	Sticky(training, "Onboarding / Offboarding cost", "Additional effort required to bring new team members up to speed, or to ensure a smooth transition when team members leave.")
+	Sticky_Blue(training, "Onboarding / Offboarding cost", "Additional effort required to bring new team members up to speed, or to ensure a smooth transition when team members leave.")
 '}
 
 
+s(adaptability, alignment_to_market)
+o(handovers, adaptability)
+o(scope, adaptability)
+s(complexity, handovers)
+s(handovers, lead_time)
+s(lead_time, loop_length)
 
-adaptability --> alignment_to_market
-handovers --> adaptability : "O"
-scope --> adaptability : "O"
-complexity --> handovers
-handovers --> lead_time
-lead_time --> loop_length
+o(quality, lead_time)
+o(deadline, quality)
+s(e2e_agency, ownership)
+o(e2e_agency, handovers)
+s(ownership, quality)
+s(team_stability, ownership)
+o(complexity, e2e_agency)
 
-quality --> lead_time : "O"
-deadline --> quality : "O"
-e2e_agency --> ownership
-e2e_agency --> handovers : "O"
-ownership --> quality
-team_stability --> ownership
-complexity --> e2e_agency : "O"
+o(loop_length, bus_validation)
+s(bus_validation, alignment_to_market)
 
-loop_length --> bus_validation : "O"
-'loop_length -[hidden]-> bus_validation
-bus_validation --> alignment_to_market
+o(bus_validation, overrun)
+s(overrun, risk_avoidance)
+s(deadline, risk_avoidance)
+o(risk_avoidance, adaptability)
 
-bus_validation --> overrun : "O"
-overrun --> risk_avoidance
-deadline --> risk_avoidance
-risk_avoidance --> adaptability: "O"
-
-team_stability --> training: "O"
+o(team_stability, training)
 
 @enduml
