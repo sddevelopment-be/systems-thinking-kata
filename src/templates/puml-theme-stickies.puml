@@ -1,8 +1,8 @@
 ''
-'' A blue gray theme
+'' A sticky note inspired theme for PlantUML
 ''
-'' Author: Brett Schwarz
-'' Copyright (c) 2019 by Brett Schwarz
+'' Author: Stijn Dejongh
+'' Copyright (c) 2024, SD Development BV
 
 !$THEME = "bluegray"
 
@@ -29,7 +29,7 @@ skinparam backgroundColor $BGCOLOR
 
 !$FGCOLOR = $DARK
 !$PRIMARY_LIGHT = "#1c75cc"
-!$PRIMARY_DARK = "#202138"
+!$PRIMARY_DARK = "#0A0721"
 !$PRIMARY_TEXT = $WHITE
 !$SECONDARY_LIGHT = "#f5f5f5"
 !$SECONDARY_DARK = "#c2c2c2"
@@ -369,6 +369,78 @@ skinparam rectangle<<sticky>> {
     BorderThickness           2
 }
 
+skinparam rectangle<<sticky, yellow>> {
+	FontColor                 #0A0721
+  BackgroundColor           $PRIMARY_STICKY
+  BorderColor               $SECONDARY_STICKY
+}
+
+skinparam rectangle<<sticky, orange>> {
+	FontColor                 #160909
+  BackgroundColor           #DBA872
+  BorderColor               #9A4C2E
+}
+
+skinparam rectangle<<sticky, green>> {
+	FontColor                 #0C1D0C
+  BackgroundColor           #99DB84
+  BorderColor               #389545
+}
+
+skinparam rectangle<<sticky, blue>> {
+  FontColor                 #070829
+  BackgroundColor           #9EBDCC
+  BorderColor               #517B9A
+}
+
+skinparam rectangle<<sticky, purple>> {
+  FontColor                 #070829
+  BackgroundColor           #9B8EC8
+  BorderColor               #8732C8
+}
+
+skinparam rectangle<<sticky, pink>> {
+  FontColor                 #070829
+  BackgroundColor           #C89DB6
+  BorderColor               #C8479A
+}
+
+!unquoted procedure Sticky_Purple($alias, $label, $descr="", $sprite="")
+rectangle "$getContainer($label, $descr, $sprite)" <<sticky, purple>> as $alias
+!endprocedure
+
+!unquoted procedure Sticky_Pink($alias, $label, $descr="", $sprite="")
+rectangle "$getContainer($label, $descr, $sprite)" <<sticky, pink>> as $alias
+!endprocedure
+
+!unquoted procedure Sticky_Blue($alias, $label, $descr="", $sprite="")
+rectangle "$getContainer($label, $descr, $sprite)" <<sticky, blue>> as $alias
+!endprocedure
+
+!unquoted procedure Sticky_Orange($alias, $label, $descr="", $sprite="")
+rectangle "$getContainer($label, $descr, $sprite)" <<sticky, orange>> as $alias
+!endprocedure
+
+!unquoted procedure Sticky_Green($alias, $label, $descr="", $sprite="")
+rectangle "$getContainer($label, $descr, $sprite)" <<sticky, green>> as $alias
+!endprocedure
+
 !unquoted procedure Sticky($alias, $label, $descr="", $sprite="")
-rectangle "$getContainer($label, $descr, $sprite)" <<sticky>> as $alias
+rectangle "$getContainer($label, $descr, $sprite)" <<sticky, yellow>> as $alias
+!endprocedure
+
+!unquoted procedure s($start, $end, $descr="")
+same($start, $end, $descr)
+!endprocedure
+
+!unquoted procedure same($start, $end, $descr="")
+$start -[#072D5B]-> $end
+!endprocedure
+
+!unquoted procedure o($start, $end, $descr="")
+opposite($start, $end, $descr)
+!endprocedure
+
+!unquoted procedure opposite($start, $end, $descr="")
+$start -[#A9202E]-> $end : "<color: #A9202E><b>O</b></color>"
 !endprocedure
