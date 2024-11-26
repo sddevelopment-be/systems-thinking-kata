@@ -80,7 +80,7 @@ elements. Focus on the primary relationships between the elements, and aim to ma
 <details class="content pattern related">
 <summary>Click here to view a potential solution</summary>
 
-{{< image src="/images/kata/value_delivery-PART_1.png" alt="Core elements" >}}
+{{< image src="/images/kata/base_elements_CONNECTED.png" alt="Core elements" >}}
 </details>
 
 ### **Step 2:** Add Organizational Elements
@@ -94,8 +94,6 @@ reinforcing (same) effect.
 
 
 The organizational elements we will consider are:
-
-{{< image src="/images/kata/organizational_elements_TO-ADD.png" alt="Elements to be added" size="50%" float="right" >}}
 
 * **Ability to rapidly change what we're working on:** The organization's ability to quickly change direction, also known as 'adaptability' or
   'business agility'.
@@ -124,12 +122,20 @@ There are no right or wrong answers, but the goal is to have a conversation abou
 
 ### **Step 3:** Add Timeliness Elements
 
+{{< image src="/images/kata/timing_elements_CONNECT-US.png" alt="Connect the timeliness-based elements" size="100%" >}}
+
 {{< stub >}}
 
 ### **Step 4:** Add Risk Mitigation Elements
 
+{{< image src="/images/kata/risk_elements_CONNECT-US.png" alt="Connect the risks and mitigation elements" size="100%" >}}
+
 {{< stub >}}
 
-## **Round-Up:** Conclusions and Learnings
+## Round-Up
+
+### Conclusions and Learnings
+
+### Next Steps?
 
 {{< stub >}}

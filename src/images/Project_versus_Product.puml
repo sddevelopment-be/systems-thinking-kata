@@ -10,40 +10,22 @@ skinparam dpi 240
 
 left to right direction
 
-'Boundary(core, "core elements") {
+together {
 	Sticky_Green(customer_satisfaction, "Customer Satisfaction Rate", "The business goal of the organization.")
   Sticky_Green(alignment_to_market, "Alignment between product and customer needs", "The degree to which the product meets the needs of the customer.")
   Sticky_Green(loop_length, "Length of the feedback loop", "The time it takes to get feedback from the customer.")
+}
 
-  alignment_to_market -up-> customer_satisfaction: " "
-  loop_length -left-> alignment_to_market: "O"
-'}
+s(alignment_to_market, customer_satisfaction)
+alignment_to_market -[hidden]up-> customer_satisfaction
+o(loop_length, alignment_to_market)
+loop_length -[hidden]left-> alignment_to_market
 
-'Boundary(organizational, "organizational elements") {
 	Sticky(adaptability, "Ability to rapidly change what we're working on", "The organization's ability to quickly change direction, also known as 'adaptability' or 'business agility'.")
 	Sticky(scope, "Commited scope, agreement on batch size", "The organization's promise on what they will be delivering, and how large the increments will be.")
   Sticky(complexity, "Organizational Complexity", "The amount of different divisions within the company, the existence of prescriptive processes, and the decision-making mechanism that are in place.")
   Sticky(handovers, " # of Handovers", "The number of times a piece of work is handed over from one team to another.")
   Sticky(lead_time, "Lead Time", "The time it takes to deliver a piece of work from start (concept) to finish (delivered value in hands of end-users.")
-'}
-
-'Boundary(timeliness, "timeliness elements") {
-	Sticky_Orange(deadline, "Time pressure", "A type of psychological stress that occurs when there is less (perceived) time available than is required to complete a task.")
-	Sticky_Orange(quality, "Quality", "The build quality of the delivered artifacts. (e.g. Maintainability, lack of technical debt, lack of defects)")
-	Sticky_Orange(ownership, "Ownership", "The feeling of responsibility for the product by the team that is working on it.")
-	Sticky_Orange(team_stability, "Team Stability", "How fixed / temporary people are part of the team.")
-	Sticky_Orange(e2e_agency, "End-to-end agency", "Ability to deliver value independently.")
-'}
-
-'Boundary(risks, "risk mitigation elements") {
-together {
-	Sticky_Blue(bus_validation, "  # Inspection Opportunities", "Amount of chances to validate the business cases the organization is working to support/enable.")
-	Sticky_Blue(overrun, "Risk of overruns", "The risk of a delivery costing significantly more than what we were initially willing to invest in it. (Sunk Cost)")
-	Sticky_Blue(risk_avoidance, "Risk Avoidance", "Focusing on avoiding risks, rather than delivering valuable features. Favouring output over outcome. (e.g. scope negotiation, risk management, politics, window dressing)")
-}
-	Sticky_Blue(training, "Onboarding / Offboarding cost", "Additional effort required to bring new team members up to speed, or to ensure a smooth transition when team members leave.")
-'}
-
 
 s(adaptability, alignment_to_market)
 o(handovers, adaptability)
@@ -52,22 +34,33 @@ s(complexity, handovers)
 s(handovers, lead_time)
 s(lead_time, loop_length)
 
-o(quality, lead_time)
-o(deadline, quality)
-s(e2e_agency, ownership)
-o(e2e_agency, handovers)
-s(ownership, quality)
-s(team_stability, ownership)
-o(complexity, e2e_agency)
-
-o(loop_length, bus_validation)
-s(bus_validation, alignment_to_market)
-
-o(bus_validation, overrun)
-s(overrun, risk_avoidance)
-s(deadline, risk_avoidance)
-o(risk_avoidance, adaptability)
-
-o(team_stability, training)
+'	Sticky_Orange(deadline, "Time pressure", "A type of psychological stress that occurs when there is less (perceived) time available than is required to complete a task.")
+'	Sticky_Orange(quality, "Quality", "The build quality of the delivered artifacts. (e.g. Maintainability, lack of technical debt, lack of defects)")
+'	Sticky_Orange(ownership, "Ownership", "The feeling of responsibility for the product by the team that is working on it.")
+'	Sticky_Orange(team_stability, "Team Stability", "How fixed / temporary people are part of the team.")
+'	Sticky_Orange(e2e_agency, "End-to-end agency", "Ability to deliver value independently.")
+'
+'o(quality, lead_time)
+'o(deadline, quality)
+'s(e2e_agency, ownership)
+'o(e2e_agency, handovers)
+'s(ownership, quality)
+'s(team_stability, ownership)
+'o(complexity, e2e_agency)
+'
+'together {
+'	Sticky_Blue(bus_validation, "  # Inspection Opportunities", "Amount of chances to validate the business cases the organization is working to support/enable.")
+'	Sticky_Blue(overrun, "Risk of overruns", "The risk of a delivery costing significantly more than what we were initially willing to invest in it. (Sunk Cost)")
+'	Sticky_Blue(risk_avoidance, "Risk Avoidance", "Focusing on avoiding risks, rather than delivering valuable features. Favouring output over outcome. (e.g. scope negotiation, risk management, politics, window dressing)")
+'}
+'	Sticky_Blue(training, "Onboarding / Offboarding cost", "Additional effort required to bring new team members up to speed, or to ensure a smooth transition when team members leave.")
+'
+'o(loop_length, bus_validation)
+'s(bus_validation, alignment_to_market)
+'o(bus_validation, overrun)
+'s(overrun, risk_avoidance)
+'s(deadline, risk_avoidance)
+'o(risk_avoidance, adaptability)
+'o(team_stability, training)
 
 @enduml
